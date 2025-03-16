@@ -50,5 +50,6 @@ Nous verrons ensemble comment importer un jeu de données structuré pour pouvoi
 l’explorer et le visualiser. 
 
 Pour pouvoir faire l’ensemble de ces étapes, nous verrons en détail les librairies principales dédiées à l’analyse de données que sont NumPy, Pandas, Matplotlib et Seaborn. 
+
 Nous apprendrons à importer des fichiers sous forme de structures Python adaptées, 
 à manipuler ces structures et à les explorer pour en faire ressortir des tendances.
