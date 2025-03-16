@@ -47,7 +47,8 @@ mais aussi par les entreprises qui analysent ces données pour créer de nouveau
 ### Déroulement du livre
 Dans ce livre, nous allons apprendre à analyser des données avec Python et les librairies dédiées à l’analyse. 
 Nous verrons ensemble comment importer un jeu de données structuré pour pouvoir ensuite le nettoyer et le filtrer, 
-l’explorer et le visualiser. Pour pouvoir faire l’ensemble de ces étapes, 
-nous verrons en détail les librairies principales dédiées à l’analyse de données que sont NumPy, Pandas, Matplotlib et Seaborn. 
+l’explorer et le visualiser. 
+
+Pour pouvoir faire l’ensemble de ces étapes, nous verrons en détail les librairies principales dédiées à l’analyse de données que sont NumPy, Pandas, Matplotlib et Seaborn. 
 Nous apprendrons à importer des fichiers sous forme de structures Python adaptées, 
 à manipuler ces structures et à les explorer pour en faire ressortir des tendances.
