@@ -2,7 +2,7 @@
 
 Ce document est un résumé de ma lecture du livre [Python pour la Data Science - Analysez vos données](https://www.editions-eni.fr/livre/python-pour-la-data-science-analysez-vos-donnees-avec-numpy-pandas-matplotlib-et-seaborn-livre-avec-complement-video-visualisation-de-donnees-9782409039300)
 
-Contenu:
+Contenu :
 
 Chapitre 1 : Introduction
 
