@@ -89,7 +89,9 @@ def generer_raccourcis(raccouris):
     return dictionnaire_resultat
 
     """
-    Remarque: Pensez à gérer le cas où la liste contient des éléments qui ne sont pas des chaînes de caractères, comme vous l'avez fait, mais vous pourriez simplifier cette vérification en utilisant une compréhension de dictionnaire.
-    Ressources : https://www.expertpython.fr/post/ma%C3%AEtriser-les-compr%C3%A9hensions-en-python-listes-tuples-et-dictionnaires#:~:text=La%20compr%C3%A9hension%20de%20dictionnaire%20est,des%20%C3%A9l%C3%A9ments%20d%27un%20dictionnaire. 
+    Remarque: Pensez à gérer le cas où la liste contient des éléments qui ne sont pas des chaînes de caractères,
+    comme vous l'avez fait, mais vous pourriez simplifier cette vérification en utilisant une compréhension de dictionnaire.
+
+    Ressources : https://www.expertpython.fr/post/ma%C3%AEtriser-les-compr%C3%A9hensions-en-python-listes-tuples-et-        dictionnaires#:~:text=La%20compr%C3%A9hension%20de%20dictionnaire%20est,des%20%C3%A9l%C3%A9ments%20d%27un%20dictionnaire. 
     """
 ```
