@@ -25,8 +25,10 @@ print(M) # 4
 
 Il est possible d'affecter une nouvelle valeur à une variable déjà existante
 ```python
+m=5
+print(m)
 m=2
-print(m) # 2
+print(m)
 ```
 
 Note :
