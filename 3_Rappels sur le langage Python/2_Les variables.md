@@ -12,6 +12,9 @@ Le nom d’une variable peut contenir des lettres, des chiffres ou encore des un
 1a=11 # SyntaxError: invalid decimal literal
 
 a1=11 # fonctionne correctement
+
+_un=8
+_un # 8
 ```
 
 Attention, Python est sensible à la casse, c’est-à-dire qu’il fait une différence entre minuscules et majuscules.
