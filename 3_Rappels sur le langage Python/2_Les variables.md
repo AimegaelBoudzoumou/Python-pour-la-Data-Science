@@ -8,22 +8,23 @@ a=11
 
 Le nom d’une variable peut contenir des lettres, des chiffres ou encore des underscores _, mais il ne peut pas commencer par un chiffre. 
 
-Attention, Python est sensible à la casse, c’est-à-dire qu’il fait une différence entre minuscules et majuscules.
-
 ```python
 1a=11 # SyntaxError: invalid decimal literal
 
 a1=11 # fonctionne correctement
 ```
 
+Attention, Python est sensible à la casse, c’est-à-dire qu’il fait une différence entre minuscules et majuscules.
 ```python
 m=3
 M=4
 
 print(m) # 3
 print(M) # 4
+```
 
-# il est possible d'affecter une nouvelle valeur à une variable déjà existante
+Il est possible d'affecter une nouvelle valeur à une variable déjà existante
+```python
 m=2
 print(m) # 2
 ```
