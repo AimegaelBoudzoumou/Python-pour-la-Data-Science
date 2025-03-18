@@ -33,5 +33,5 @@ print(m)
 
 Note :
 
-La fonction print() de Python permet d’afficher quelque chose comme par exemple du texte : ```python print("Hello")```, ou encore le contenu d’une variable : ```py print(ma_variable)```.
+La fonction print() de Python permet d’afficher quelque chose comme par exemple du texte : ```print("Hello")```, ou encore le contenu d’une variable : ```print(ma_variable)```.
 
