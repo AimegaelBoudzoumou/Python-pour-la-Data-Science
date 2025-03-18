@@ -86,6 +86,3 @@ str(15) # '15'
 
 type(str(15)) # str
 ```
-
-Exercices pratiques : voir les fonctions 
-
