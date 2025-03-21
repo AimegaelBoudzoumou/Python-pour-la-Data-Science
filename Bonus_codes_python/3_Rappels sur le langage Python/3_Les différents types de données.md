@@ -55,3 +55,29 @@ def verifier_comparaison(nombre1, nombre2, operateur):
     ce qui pourrait rendre le code plus concis.
     """
 ```
+
+```python
+def concatener_textes(chaine1, chaine2):
+    """Cette fonction prend en entrée 
+    deux chaînes de caractères et retourne leur concaténation.
+    Si l'une des entrées n'est pas une chaîne de caractères, 
+    la fonction doit lever une exception de type ValueError 
+    avec le message "Les deux entrées doivent être des chaînes de caractères".
+    Note : Une erreur ValueError en Python est une exception qui survient lorsqu'une 
+    opération reçoit un argument ayant le bon type mais une valeur inappropriée.
+    
+    Arguments : deux chaînes de caractères
+    
+    Retourne une chaîne de caractères
+    """
+        
+    if (isinstance(chaine1, str) and isinstance(chaine2, str)):
+        return chaine1 + chaine2
+    else:
+        raise ValueError("Les deux entrées doivent être des chaînes de caractères")
+    
+    """
+    Pense à ajouter des tests supplémentaires pour vérifier 
+    le comportement de la fonction avec des chaînes vides ou des espaces.
+    """
+```
