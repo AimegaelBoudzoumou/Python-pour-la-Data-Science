@@ -34,7 +34,61 @@ ma_liste[start:stop:step]
 Ici, plutôt que d’accéder aux valeurs une par une grâce à l’indexage simple (où on ne donne qu’un index), on va donner l’index de départ, l’index de fin et le pas (par défaut le pas est de 1, si on met 2, par exemple, Python saute une valeur sur 2).
 
 ```python
-
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[2:4] # [3, 4]
 ```
+
+Python retourne une liste contenant les valeurs des index ```2``` et ```3```, c’est-à-dire les valeurs ```3``` et ```4``` de ```ma_liste```. Instinctivement, on pourrait penser qu’en écrivant ```2:4```, Python donnerait les valeurs aux index ```2```, ```3``` et ```4```, mais non, il donne les valeurs jusqu’à l’index ````n-1```.
+
+Si on ne donne pas d’index au début, Python part du début de la liste.
+
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[:4] # [1, 2, 3, 4]
+```
+
+Python affiche ````1```, ```2```, ```3``` et ```4```, les valeurs des index ```0```, ```1```, ```2```, ```3```.
+
+Si on ne met rien comme dernier index, Python affichera la liste à partir de l’index qu’on lui donne jusqu’à la fin de la liste.
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[3:] # [4, 5, 6, 7, 8, 'hello', 10.5]
+```
+
+On peut aussi donner une valeur de début, une valeur de fin et une valeur de pas. Le pas est de 1 par défaut, mais si nous le mettons à 2, Python saute une valeur sur deux.
+
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[0:3:2] # [1, 3]
+```
+
+Voici quelques astuces de slicing supplémentaires.
+
+Afficher les valeurs des index pairs, en partant de l’index 0 (premier index pair) jusqu’à la fin de la liste, avec un pas de 2.
+
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[::2] # [1, 3, 5, 7, 'hello']
+```
+
+Afficher les valeurs des index impairs, en partant de l’index 1 (premier index impair) jusqu’à la fin de la liste, avec un pas de 2.
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[1::2] # [2, 4, 6, 8, 10.5]
+```
+
+Si on souhaite partir de la fin de la liste, il suffit d’utiliser des nombres négatifs.
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[-2] # 'hello'
+```
+
+Enfin, on peut aussi partir d’un entier positif pour arriver jusqu’à un entier négatif. 
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[1:-4] # [2, 3, 4, 5, 6]
+```
+
+
 
 ### c. 
