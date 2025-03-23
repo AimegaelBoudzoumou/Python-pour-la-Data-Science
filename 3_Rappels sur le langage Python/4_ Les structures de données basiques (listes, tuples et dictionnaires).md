@@ -206,4 +206,107 @@ Lorsque nous souhaitons que des données restent inchangées dans notre programm
 
 ## 3. Les dictionnaires
 
+### a. Introduction aux dictionnaires
 
+Un dictionnaire est une structure qui n’est pas ordonnée (contrairement aux listes), qui peut être modifiée et qui est indexée, tout comme les listes. Il est aussi possible de mélanger les types de valeurs dans un dictionnaire (caractères, entiers...).
+
+Le principe des dictionnaires est de lier une clé à une valeur et de pouvoir accéder aux valeurs grâce à ces clés. Ainsi, plutôt que de travailler avec des numéros d’index pour accéder à nos valeurs, nous pouvons travailler avec des clés, des mots.
+
+Pour créer un dictionnaire, on utilise les accolades {}, puis on donne un ensemble de couples clé-valeur, séparés par une virgule.
+
+```python
+notes_eleves = {
+    "Marie": 15, 
+    "Thomas": 12, 
+    "Julien": "absent", 
+    "Elise": 9, 
+    "Samuel": 17 
+}
+print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 'absent', 'Elise': 9, 'Samuel': 17}
+```
+
+Afficher une valeur grâce à sa clé:
+```python
+notes_eleves["Samuel"] # 17
+```
+
+### b. Ajouter, modifier et supprimer des éléments d’un dictionnaire
+
+__Ajout__
+
+On peut ajouter un nouveau couple clé-valeur dans un dictionnaire existant.
+
+```python
+notes_eleves["Julie"]=9
+print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 'absent', 'Elise': 9, 'Samuel': 17, 'Julie': 9}
+```
+
+__Modification__
+Pour modifier une valeur, il faut dire à Python pour quelle clé il doit modifier la valeur associée.
+
+```python
+notes_eleves["Julien"]=13
+print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 13, 'Elise': 9, 'Samuel': 17, 'Julie': 9}
+```
+
+Attention : Attention : un dictionnaire ne peut pas contenir deux fois la même clé, sinon la valeur pour cette clé est remplacée par la dernière valeur assignée à cette clé.
+
+__Suppression__
+
+Si on souhaite supprimer un élément d’un dictionnaire, on pourra encore une fois utiliser le mot-clé del.
+
+```python
+notes_eleves["Julien"]=13
+print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 13, 'Elise': 9, 'Samuel': 17, 'Julie': 9}
+```
+
+### c. Parcourir un dictionnaire
+Parcourir un dictionnaire, c’est-à-dire itérer sur chaque élément de celui-ci, est possible soit par clés-valeurs, soit juste par les clés, soit juste par les valeurs. Pour cela, on utilisera une boucle ```for```.
+
+__keys()__
+Pour les dictionnaires, il existe une méthode, ```keys()```, qui retourne la liste de toutes les clés d’un dictionnaire. Il suffit ensuite d’y appliquer une boucle ```for``` pour parcourir cette liste.
+```python
+for cle in mon_dictionnaire.keys(): 
+    print(cle)
+```
+
+Exemple:
+```python
+for prenom in notes_eleves.keys():
+    print(prenom)
+```
+
+__values()__
+De même, il existe une méthode, ```values()```, qui retourne la liste de toutes les valeurs d’un dictionnaire. Il suffit ensuite d’y appliquer une boucle ```for``` pour parcourir cette liste de valeurs.
+
+```python
+for valeur in mon_dictionnaire.values(): 
+    print(valeur)
+```
+
+__items()__
+Et enfin, si on veut parcourir simultanément les clés et les valeurs, on utilise la méthode items(), qui va renvoyer une liste contenant des tuples de couples clé-valeur.
+
+```for cle,valeur in mon_dictionnaire.items(): 
+    print(cle,valeur)
+```
+
+````python
+notes_eleves.items() # dict_items([('Marie', 15), ('Thomas', 12), ('Julien', 13), ('Elise', 9), ('Samuel', 17)])
+```
+
+Exemple : 
+```python
+for cle,valeur in notes_eleves.items():
+    print(cle, valeur)
+```
+
+Marie 15
+
+Thomas 12
+
+Julien 13
+
+Elise 9
+
+Samuel 17
