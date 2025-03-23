@@ -175,5 +175,35 @@ print(ma_liste) # [1, 2, 3, 5, 6, 7, 8, 'hello', 10.5]
 La liste vide précédemment ajoutée a bien été supprimée de ma_liste.
 
 ## 2. Les tuples
+Un tuple n’est rien d’autre qu’une liste, à la seule différence que le tuple est une liste qu’on ne peut pas modifier. Pour créer un tuple, cela se fait de la même manière que pour une liste, sauf que les crochets sont remplacés par des parenthèses.
+
+```python
+mon_tuple=(1,2,3,4,5)
+print(type(mon_tuple)) # <class 'tuple'>
+print(mon_tuple) # (1, 2, 3, 4, 5)
+```
+
+Pour accéder à un élément d’un tuple, on utilise l’indexage simple, comme pour les listes.
+```python
+mon_tuple[0] # 1
+```
+
+Deux avantages des tuples : l’assignation multiple et la protection en écriture.
+
+Assignation multiple grâce aux tuples.
+```python
+ma_variable1, ma_variable2 = 1, 2
+print(ma_variable1) # 1
+print(ma_variable2) # 2
+```
+
+On ne peut pas ajouter, supprimer ou modifier des éléments.
+```python
+mon_tuple[0]=10
+print(mon_tuple) # TypeError: 'tuple' object does not support item assignment
+```
+Lorsque nous souhaitons que des données restent inchangées dans notre programme, nous les assignons à un tuple, ce qui garantit leur protection et leur non-modification.
+
+## 3. Les dictionnaires
 
 
