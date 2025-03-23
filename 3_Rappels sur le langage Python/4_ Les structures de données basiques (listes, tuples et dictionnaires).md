@@ -31,4 +31,10 @@ Syntaxe:
 ma_liste[start:stop:step]
 ```
 
+Ici, plutôt que d’accéder aux valeurs une par une grâce à l’indexage simple (où on ne donne qu’un index), on va donner l’index de départ, l’index de fin et le pas (par défaut le pas est de 1, si on met 2, par exemple, Python saute une valeur sur 2).
+
 ```python
+
+```
+
+### c. 
