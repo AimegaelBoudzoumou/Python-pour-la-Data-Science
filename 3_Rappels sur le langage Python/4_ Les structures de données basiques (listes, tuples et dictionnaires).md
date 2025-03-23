@@ -93,6 +93,7 @@ ma_liste[1:-4] # [2, 3, 4, 5, 6]
 La liste est une structure modifiable, on peut donc ajouter, supprimer et modifier les valeurs de la liste.
 
 __Ajout__
+
 La méthode ```append()``` permet d’ajouter des éléments à une liste.
 ```python
 ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
@@ -136,6 +137,7 @@ print(ma_liste) # [1, 2, 3, 8, 10, 6, 7, 8, 'hello', 10.5]
 ```
 
 __Suppression__
+
 Pour supprimer des valeurs avec le slicing, c’est le même principe que la modification : on donne les index auxquels on veut supprimer les valeurs et on donne une liste vide.
 
 Syntaxe:
@@ -242,6 +244,7 @@ print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 'absent', 'Elise': 9
 ```
 
 __Modification__
+
 Pour modifier une valeur, il faut dire à Python pour quelle clé il doit modifier la valeur associée.
 
 ```python
@@ -264,6 +267,7 @@ print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 13, 'Elise': 9, 'Sam
 Parcourir un dictionnaire, c’est-à-dire itérer sur chaque élément de celui-ci, est possible soit par clés-valeurs, soit juste par les clés, soit juste par les valeurs. Pour cela, on utilisera une boucle ```for```.
 
 __keys()__
+
 Pour les dictionnaires, il existe une méthode, ```keys()```, qui retourne la liste de toutes les clés d’un dictionnaire. Il suffit ensuite d’y appliquer une boucle ```for``` pour parcourir cette liste.
 ```python
 for cle in mon_dictionnaire.keys(): 
@@ -277,6 +281,7 @@ for prenom in notes_eleves.keys():
 ```
 
 __values()__
+
 De même, il existe une méthode, ```values()```, qui retourne la liste de toutes les valeurs d’un dictionnaire. Il suffit ensuite d’y appliquer une boucle ```for``` pour parcourir cette liste de valeurs.
 
 ```python
@@ -285,6 +290,7 @@ for valeur in mon_dictionnaire.values():
 ```
 
 __items()__
+
 Et enfin, si on veut parcourir simultanément les clés et les valeurs, on utilise la méthode items(), qui va renvoyer une liste contenant des tuples de couples clé-valeur.
 
 ```for cle,valeur in mon_dictionnaire.items(): 
