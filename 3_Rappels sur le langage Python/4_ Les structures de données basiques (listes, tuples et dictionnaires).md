@@ -90,4 +90,90 @@ ma_liste[1:-4] # [2, 3, 4, 5, 6]
 ```
 
 ### c. Ajouter et supprimer des éléments à une liste
+La liste est une structure modifiable, on peut donc ajouter, supprimer et modifier les valeurs de la liste.
+
+__Ajout__
+La méthode ```append()``` permet d’ajouter des éléments à une liste.
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste.append(2)
+print(ma_liste) # [1, 2, 3, 4, 5, 6, 7, 8, 'hello', 10.5, 2]
+```
+
+La méthode ```append()``` ajoute l’élément en fin de liste. Si on souhaite ajouter un élément à un endroit précis de la liste, on utilise la méthode ```insert()```, qui signifie insérer en français.
+
+Ajoutons la chaîne de caractères "```nouvelle```" à la position 5, l’index 5 de ```ma_liste```.
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste.insert(5,"nouvelle")
+print(ma_liste) # [1, 2, 3, 4, 5, 'nouvelle', 6, 7, 8, 'hello', 10.5]
+```
+
+On voit bien que la chaîne de caractères a été insérée à la position 5, en comptant à partir de 0, toujours.
+
+__Modification__
+
+Pour modifier un élément, on peut se servir de l’indexage simple, avec un index entre crochets, ou du slicing. Puis on attribue une (ou des) nouvelle(s) valeur(s) à la position (ou aux positions) donnée(s).
+
+Sytaxe:
+```python
+ma_liste[index]=nouvelle_valeur 
+ma_liste[start:stop:step]=[liste de nouvelles valeurs]
+```
+
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[0] = "a"
+print(ma_liste) # ['a', 2, 3, 4, 5, 6, 7, 8, 'hello', 10.5]
+```
+
+Ici, Python met la valeur ```8``` à l’index ```3``` et la valeur ```10``` à l’index ```4```.
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+print(ma_liste) # [1, 2, 3, 4, 5, 6, 7, 8, 'hello', 10.5]
+ma_liste[3:5]=[8,10]
+print(ma_liste) # [1, 2, 3, 8, 10, 6, 7, 8, 'hello', 10.5]
+```
+
+__Suppression__
+Pour supprimer des valeurs avec le slicing, c’est le même principe que la modification : on donne les index auxquels on veut supprimer les valeurs et on donne une liste vide.
+
+Syntaxe:
+```python
+ma_liste[start:stop:step] = []
+```
+
+Imaginons que l’on veuille supprimer les valeurs aux index 0 et 1 :
+```python
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[0:2] = []
+print(ma_liste) # [3, 4, 5, 6, 7, 8, 'hello', 10.5]
+```
+
+Une liste peut liste une autre liste:
+```pyton
+ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
+ma_liste[3] = []
+print(ma_liste) # [1, 2, 3, [], 5, 6, 7, 8, 'hello', 10.5]
+```
+
+Pour réussir à supprimer un seul élément avec l’indexage simple (un seul index entre crochets), on peut utiliser le mot-clé ```del```.
+
+```del``` prend en entrée un argument et le supprime.
+
+Syntaxe:
+```python
+del ma_liste[mon_index]
+```
+
+Supprimons la valeur à l’index 3 de ma_liste.
+```python
+print(ma_liste) # [1, 2, 3, [], 5, 6, 7, 8, 'hello', 10.5]
+del ma_liste[3]
+print(ma_liste) # [1, 2, 3, 5, 6, 7, 8, 'hello', 10.5]
+```
+La liste vide précédemment ajoutée a bien été supprimée de ma_liste.
+
+## 2. Les tuples
+
 
