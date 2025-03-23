@@ -259,8 +259,8 @@ __Suppression__
 Si on souhaite supprimer un élément d’un dictionnaire, on pourra encore une fois utiliser le mot-clé del.
 
 ```python
-notes_eleves["Julien"]=13
-print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 13, 'Elise': 9, 'Samuel': 17, 'Julie': 9}
+del notes_eleves["Julie"]
+print(notes_eleves) # {'Marie': 15, 'Thomas': 12, 'Julien': 13, 'Elise': 9, 'Samuel': 17}
 ```
 
 ### c. Parcourir un dictionnaire
