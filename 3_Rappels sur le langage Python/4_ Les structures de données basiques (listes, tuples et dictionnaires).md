@@ -17,7 +17,7 @@ print(ma_liste) # [1, 2, 3, 4, 5, 6, 7, 8, 'hello', 10.5]
 ### b. Accéder aux éléments d’une liste
 Pour afficher une valeur particulière d’une liste, on donnera l’index (indice) auquel se trouve la valeur qu’on souhaite afficher, c’est-à-dire la position de la valeur dans la liste.
 
-Note : Python commence à compter à partir de 0. Donc pour afficher la première valeur de la liste, il faut donner l’index 0, pour afficher la deuxième valeur de la liste, il faut donner l’index 1, etc.
+Note : Python commence à compter à partir de ```0```. Donc pour afficher la première valeur de la liste, il faut donner l’index ```0```, pour afficher la deuxième valeur de la liste, il faut donner l’index ```1```, etc.
 
 ```python
 ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
@@ -38,7 +38,7 @@ ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
 ma_liste[2:4] # [3, 4]
 ```
 
-Python retourne une liste contenant les valeurs des index ```2``` et ```3```, c’est-à-dire les valeurs ```3``` et ```4``` de ```ma_liste```. Instinctivement, on pourrait penser qu’en écrivant ```2:4```, Python donnerait les valeurs aux index ```2```, ```3``` et ```4```, mais non, il donne les valeurs jusqu’à l’index ````n-1```.
+Python retourne une liste contenant les valeurs des index ```2``` et ```3```, c’est-à-dire les valeurs ```3``` et ```4``` de ```ma_liste```. Instinctivement, on pourrait penser qu’en écrivant ```2:4```, Python donnerait les valeurs aux index ```2```, ```3``` et ```4```, mais non, il donne les valeurs jusqu’à l’index ```n-1```.
 
 Si on ne donne pas d’index au début, Python part du début de la liste.
 
@@ -47,7 +47,7 @@ ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
 ma_liste[:4] # [1, 2, 3, 4]
 ```
 
-Python affiche ````1```, ```2```, ```3``` et ```4```, les valeurs des index ```0```, ```1```, ```2```, ```3```.
+Python affiche ```1```, ```2```, ```3``` et ```4```, les valeurs des index ```0```, ```1```, ```2```, ```3```.
 
 Si on ne met rien comme dernier index, Python affichera la liste à partir de l’index qu’on lui donne jusqu’à la fin de la liste.
 ```python
@@ -89,6 +89,5 @@ ma_liste = [1,2,3,4,5,6,7,8,"hello" ,10.5]
 ma_liste[1:-4] # [2, 3, 4, 5, 6]
 ```
 
+### c. Ajouter et supprimer des éléments à une liste
 
-
-### c. 
