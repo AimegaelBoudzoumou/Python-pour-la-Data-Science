@@ -74,4 +74,4 @@ not((3 ==4) or (4 == 5)) # True
 
 __bitwise__
 
-Ici nous utilisons les opérateurs logiques car chaque expression booléenne génère une unique valeur True ou False. Par exemple, ```3==3``` génère ```True``` et ```4==4``` génère ```True``` aussi, donc les opérateurs logiques fonctionnent. Nous verrons dans le chapitre sur la librairie Pandas, notamment, que lorsque les expressions booléennes renvoient des objets contenant plusieurs booléens, nous utilisons les opérateurs ```bitwise``` (comparaison bit à bit), plutôt que les opérateurs logiques.
+Ici nous utilisons les opérateurs logiques car chaque expression booléenne génère une unique valeur ```True``` ou ```False```. Par exemple, ```3==3``` génère ```True``` et ```4==4``` génère ```True``` aussi, donc les opérateurs logiques fonctionnent. Nous verrons dans le chapitre sur la librairie Pandas, notamment, que lorsque les expressions booléennes renvoient des objets contenant plusieurs booléens, nous utilisons les opérateurs ```bitwise``` (comparaison bit à bit), plutôt que les opérateurs logiques.
