@@ -26,7 +26,7 @@ Les opérateurs relationnels sont aussi appelés opérateurs de comparaison, car
 
 Voici les opérateurs relationnels.
 
-Il y a l’opérateur ==, qui permet de comparer deux valeurs, afin de tester si elles sont égales ou non. Il y a aussi l’opérateur !=, qui est le contraire de == et permet de tester si deux valeurs sont différentes.
+Il y a l’opérateur ```==```, qui permet de comparer deux valeurs, afin de tester si elles sont égales ou non. Il y a aussi l’opérateur ```!=```, qui est le contraire de ```==``` et permet de tester si deux valeurs sont différentes.
 
 Attention : ne confondez pas l’opérateur d’assignation = avec l’opérateur de comparaison ==.
 
