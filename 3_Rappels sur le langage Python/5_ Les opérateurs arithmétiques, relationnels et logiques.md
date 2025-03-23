@@ -28,9 +28,9 @@ Voici les opérateurs relationnels.
 
 Il y a l’opérateur ```==```, qui permet de comparer deux valeurs, afin de tester si elles sont égales ou non. Il y a aussi l’opérateur ```!=```, qui est le contraire de ```==``` et permet de tester si deux valeurs sont différentes.
 
-Attention : ne confondez pas l’opérateur d’assignation = avec l’opérateur de comparaison ==.
+Attention : ne confondez pas l’opérateur d’assignation ```=``` avec l’opérateur de comparaison ```=```.
 
-Ces comparaisons renvoient un type de données que nous avons vu précédemment ensemble : le booléen. Si la comparaison est vraie, la valeur True est renvoyée, si elle est fausse, la valeur False est renvoyée.
+Ces comparaisons renvoient un type de données que nous avons vu précédemment ensemble : le booléen. Si la comparaison est vraie, la valeur ``True```` est renvoyée, si elle est fausse, la valeur ```False``` est renvoyée.
 
 ```python
 print(1==1) # True
@@ -43,12 +43,15 @@ print(3>25) # False
 ### b. Les opérateurs logiques
 Les opérateurs logiques permettent de comparer des expressions booléennes, et non plus des valeurs en tant que telles. Globalement, les opérateurs logiques sont associés aux opérateurs relationnels pour écrire des expressions de comparaisons plus complexes.
 
+
+__and__
 Syntaxe générale avec __and__:
 ```python
 (valeur == valeur2) and (valeur3 != valeur4) 
 ```
 Il y a deux opérateurs logiques, ```and``` (qui signifie et) et ```or``` (qui signifie ou). Dans l’expression écrite ci-dessus, la valeur ```True``` sera renvoyée si et seulement si ```valeur``` est égale à ```valeur2``` __ET__ si ```valeur3``` est différente de ```valeur4```.
 
+__or__
 Syntaxe générale avec __or__:
 ```python
 (valeur == valeur2) or (valeur3 != valeur4) 
@@ -71,4 +74,4 @@ not((3 ==4) or (4 == 5)) # True
 
 __bitwise__
 
-Ici nous utilisons les opérateurs logiques car chaque expression booléenne génère une unique valeur True ou False. Par exemple, ````3==3``` génère ```True``` et ```4==4``` génère ```True``` aussi, donc les opérateurs logiques fonctionnent. Nous verrons dans le chapitre sur la librairie Pandas, notamment, que lorsque les expressions booléennes renvoient des objets contenant plusieurs booléens, nous utilisons les opérateurs ```bitwise``` (comparaison bit à bit), plutôt que les opérateurs logiques.
+Ici nous utilisons les opérateurs logiques car chaque expression booléenne génère une unique valeur True ou False. Par exemple, ```3==3``` génère ```True``` et ```4==4``` génère ```True``` aussi, donc les opérateurs logiques fonctionnent. Nous verrons dans le chapitre sur la librairie Pandas, notamment, que lorsque les expressions booléennes renvoient des objets contenant plusieurs booléens, nous utilisons les opérateurs ```bitwise``` (comparaison bit à bit), plutôt que les opérateurs logiques.
