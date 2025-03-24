@@ -5,6 +5,26 @@ La fonction doit afficher le message donné en entrée suivi du caractère spéc
 Par exemple, si la fonction reçoit "Bonjour" et que fin est égal à "!", elle doit afficher "Bonjour!". 
 Si fin n'est pas fourni, elle doit simplement afficher "Bonjour" suivi d'un retour à la ligne.
 ```python
+def afficher_message(message, fin="\n"):
+    """Cette fonction doit afficher le message donné en entrée suivi 
+    du caractère spécifié par l'argument fin
+    
+    Arguments : une chaîne de caractères en entrée et 
+    un argument optionnel fin (avec une valeur par défaut de la chaîne de caractères \n)
+    
+    Affiche le message donné en entrée suivi du caractère spécifié par l'argument fin
+    """
+    
+    if isinstance(message, str):
+        print(message + fin)
+    else:
+        print("Le message doit être une chaîne de caractères")
+    """
+    Remarques :
+    1. La vérification du type de message est une bonne pratique, mais il serait préférable de lever une exception plutôt que d'afficher un message d'erreur dans 
+    la fonction. Cela permettrait à l'utilisateur de gérer les erreurs de manière plus appropriée.
+    2. Pense à ajouter des tests supplémentaires pour couvrir d'autres cas, comme des chaînes vides ou des caractères spéciaux.
+    """
 ```
 
 ### Ennoncé 2:
