@@ -36,27 +36,28 @@ la méthode doit retourner "Marque: Toyota, Modèle: Corolla, Année: 2020". Dan
 n'oublie pas que les attributs ne doivent pas être suivis de parenthèses lors de leur utilisation.
 ```python
 class Voiture():
-    """Cette classe possédera les attributs suivants : marque, modele et annee. 
-    On y Crée un constructeur qui initialisera ces attributs lors de la création d'une instance 
-    de la classe. 
-    On y Ajoute également une méthode description qui retourne une chaîne de caractères 
+    """cette classe possédera les attributs suivants : marque, modele et annee.
+    une méthode nommée description qui retourne une chaîne de caractères 
     décrivant la voiture au format suivant : "Marque: [marque], Modèle: [modèle], Année: [année]".
     
-    Retorune doit retourner la chaîne de caractères : "Marque: Toyota, Modèle: Corolla, Année: 2020".
-    
-    Pour instancer la classe Voiture, faire : voiture = Voiture("Toyota", "Corolla", "2020")
-    
-    Pour appeler la méthode description, faire : voiture.description()
+    retourne la chaîne de caractères : "Marque: Toyota, Modèle: Corolla, Année: 2020"
     """
     
-    
-    def __init__(self, marque, modele, annee):
+    # création du constructeur de la clase Voiture, avec ces 3 paramètres
+    def __init__(self, marque: str, modele: str, annee: str):
         self.marque = marque
         self.modele = modele
         self.annee  = annee
     
-    def description(self):
+    # écriture de la méthode description, qui retoure une chaîne de caractères décrivant la voiture
+    def description(self): # -> str
         return f"Marque: {self.marque}, Modèle: {self.modele}, Année: {self.annee}"
+    
+    
+    """Remarque : 
+    Pense à utiliser des types pour l'année, comme int, si tu souhaites représenter des années, 
+    car cela pourrait éviter des erreurs lors de comparaisons ou de calculs futurs.
+    """
 ```
 
 ### Ennoncé 3:
