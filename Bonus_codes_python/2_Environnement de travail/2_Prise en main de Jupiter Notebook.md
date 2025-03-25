@@ -1,3 +1,6 @@
+### Ennoncé 1:
+Écris une fonction en Python nommée ```verifier_port``` qui prend un numéro de port en entrée (sous forme d'entier) et retourne une chaîne de caractères indiquant si le port est valide pour Jupyter Notebook, c'est-à-dire s'il est 8888, 8889 ou 8890. La fonction doit retourner "Port valide" si le port est correct, et "Port invalide" sinon. Assure-toi que ta fonction gère également les valeurs en dehors de cette plage.
+
 ```python
 def verifier_port(port_number):
     """vérifier port
@@ -24,6 +27,9 @@ def verifier_port(port_number):
         return "Port invalide"
 ```
 
+### Ennoncé 2:
+Écris une fonction en Python nommée ```renommer_notebook``` qui prend en entrée le nom actuel d'un notebook (sous forme de chaîne) et un nouveau nom désiré (également sous forme de chaîne). La fonction doit retourner le nouveau nom du notebook en respectant les bonnes pratiques, c'est-à-dire en remplaçant tous les espaces par des underscores et en ajoutant l'extension ".ipynb" à la fin du nom. Par exemple, si la fonction reçoit "Untitled" comme nom actuel et "Mon Notebook" comme nouveau nom désiré, elle doit retourner "Mon_Notebook.ipynb". Assure-toi que si le nom désiré est vide, la fonction retourne "Untitled.ipynb".
+
 ```python
 def renommer_notebook(actual_notebook_name, desire_notebook_name):
     """Cette fonction doit retourner le nouveau nom du notebook en respectant les bonnes 
@@ -43,6 +49,9 @@ def renommer_notebook(actual_notebook_name, desire_notebook_name):
     
     return desire_notebook_name.replace(' ', '_') + ".ipynb"
 ```
+
+## Ennoncé 3:
+Écris une fonction en Python nommée ```generer_raccourcis``` qui prend en entrée une liste de raccourcis-clavier (sous forme de chaîne) et retourne un dictionnaire où chaque raccourci est associé à une description de son action. Par exemple, si la fonction reçoit la liste ```["B", "A", "F"]```, elle doit retourner un dictionnaire comme suit :
 
 ```python
 def generer_raccourcis(raccouris):
