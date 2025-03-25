@@ -68,4 +68,27 @@ si la fonction reçoit "CalculScientifique" et la liste ["module1", "module2", "
 elle doit retourner {"CalculScientifique": ["module1", "module2", "module3"]}. Si la liste de modules est vide, 
 la fonction doit retourner un dictionnaire avec le nom de la librairie et une valeur de liste vide.
 ```python
+def creer_librairie(librairie, liste_de_modules):
+    """cette fonction doit retourner un dictionnaire où la clé est le nom de la librairie 
+    et la valeur est une liste de modules 
+    
+    arguments : un nom de librairie (sous forme de chaîne) 
+    et une liste de modules (sous forme de liste de chaînes)
+    
+    retourne retourner un dictionnaire où la clé est le nom de la librairie et la valeur est une liste de modules.
+    """
+    # Si librairie n'est pas de type chaîne de caractères, on lève une Exception
+    if not isinstance(librairie, str):
+        raise ValueError("La librairie doit être de type chaîne de caractères")
+    
+    # Si la liste liste_de_modules est vide : on retoure un dictionnaire avec pour valeur une liste vide
+    if not liste_de_modules:
+        return {librairie: []}
+    
+    # Si tous les modules sont de type chaîne de caractères, on retourne le dictionnaire
+    # Sinon on lève une Exception
+    if all(isinstance(module, str) for module in liste_de_modules):
+         return {librairie: liste_de_modules}
+    else:
+        raise ValueError(f"Tous les modules doivent être de type chaîne de caractères")
 ```
