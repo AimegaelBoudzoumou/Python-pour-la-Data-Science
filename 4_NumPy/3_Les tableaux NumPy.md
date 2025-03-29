@@ -199,6 +199,69 @@ dtype('int32')
 ```
 
 ### c. Créer un ndarray à partir d’un fichier
+Il est aussi possible de créer un ```ndarray``` en lisant des données dans un fichier txt ou encore csv. Pour cela, nous avons besoin d’un fichier d’exemple.
+
+Une ressource que nous utilisons est le site web : https://vincentarelbundock.github.io/Rdatasets/datasets.html qui répertorie un ensemble de jeux de données très variés, disponibles au format CSV.
+
+Pour l’exemple, nous allons créer un tableau à partir d’un fichier de données CSV disponible via le lien suivant :
+https://vincentarelbundock.github.io/Rdatasets/csv/datasets/iris.csv
+
+Nous avons modifié ce fichier afin de pouvoir l’importer dans un ```ndarray```, qui ne doit contenir qu’un seul type de données car, à l’origine, ce fichier contient des nombres entiers et des chaînes de caractères. 
+Ce fichier contient des informations sur la longueur et la largeur de pétales et de sépales de 150 iris, sous forme de nombres réels, ```float```. Les longueurs et largeurs de pétales et sépales permettent de différencier trois espèces d’Iris, représentées dans la cinquième colonne par des réels plutôt que le nom de l’espèce, étant donné que les ```ndarrays``` n’acceptent pas des types de données différents. 
+
+L’espèce 1.0 correspond à l’espèce Setosa, l’espèce 2.0 à l’espèce Versicolor et l’espèce 3.0 correspond à l’espèce Virginica. 
+
+Ce jeu de données est très populaire en Data Science, car il fonctionne très bien sur de nombreux modèles statistiques. Ici, nous l’utiliserons pour apprendre à créer un ```ndarray``` à partir d’un fichier, mais aussi pour apprendre à explorer et filtrer un ```ndarray``` avec NumPy.
+
+Sur l’image ci-dessous, voici un aperçu du fichier ouvert dans Excel. Le but va être de le lire et de stocker les informations qu’il contient dans un ```ndarray```.
+![iris_Capture d’écran 2025-03-29 123656](https://github.com/user-attachments/assets/0aaf6568-4bb3-4773-98a1-63be1597f5e6)
+
+
+#### genfromtxt()
+Pour lire un fichier, il est possible d’utiliser la fonction ```genfromtxt()``` de NumPy. Il en existe d’autres, mais celle-ci est la fonction qui possède le plus d’options, qui permettent de l’adapter à des fichiers de nombreux formats différents. 
+
+Syntaxe:
+```
+mon_array=np.genfromtxt("mon_fichier.txt", delimiter=";",  
+skip_header=True)
+```
+
+L’option ```delimiter``` permet de spécifier à la fonction ```genfromtxt()``` quel est le séparateur de colonne ; ici, on spécifie que les colonnes sont séparées par un point-virgule ; car il s’agit d’un fichier au format ```CSV```.
+
+Enfin, l’option ```skip_header``` permet de spécifier à la fonction ```genfromtxt()``` que le fichier contient un en-tête et qu’on souhaite l’ignorer, en spécifiant la valeur ```True```.
+
+```python
+import numpy as np
+iris=np.genfromtxt("C:/Users/chris/Documents/Travaux_personnels_2025/Python pour la Data Science/VKEIPYTDAT/EIPYTDAT/Jeux_de_donnees/iris.csv", delimiter=";", skip_header=True)
+print(iris)
+```
+```python
+[[5.1 3.5 1.4 0.2 1. ]
+ [4.9 3.  1.4 0.2 1. ]
+ [4.7 3.2 1.3 0.2 1. ]
+ [4.6 3.1 1.5 0.2 1. ]
+ [5.  3.6 1.4 0.2 1. ]
+...
+...
+[6.7 3.  5.2 2.3 3. ]
+ [6.3 2.5 5.  1.9 3. ]
+ [6.5 3.  5.2 2.  3. ]
+ [6.2 3.4 5.4 2.3 3. ]
+ [5.9 3.  5.1 1.8 3. ]]
+```
+
+#### savetxt()
+Permet d'enregistrer un fichier sur un ordinateur.
+
+Syntaxe : 
+```
+np.savetxt("monarray.txt", mon_array, delimiter=";") 
+```
+
+```python
+import numpy as np
+np.savetxt("C:/Users/chris/Documents/Travaux_personnels_2025/Python pour la Data Science/Jeux_de_donnees/iris_2.csv", iris, delimiter=";")
+```
 
 ## 2. Indexation
 
