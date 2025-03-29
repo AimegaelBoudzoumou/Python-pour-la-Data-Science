@@ -1,5 +1,15 @@
 # Les tableaux NumPy
 
+Contenu :
+
+Créer un ndarray : à partir d'une liste, grâce à des fonctions Numpy, à partir d'un fichier
+
+Indexation : indexation simple, indexation booléenne, Fancy indexing
+
+Accéder aux éléments par tranche
+
+Notion de vue et de copie
+
 ## 1. Créer un ndarray
 
 ### a. Créer un ndarray à partir de listes
@@ -374,7 +384,9 @@ __Note__:
 L’expression booléenne "```iris[:,0] >5```" génère un ```ndarray``` à 1 dimension contenant 150 valeurs (car il y a 150 lignes dans le tableau). Ainsi, Python sait qu’il doit garder uniquement les lignes à l’indice où la valeur est à True dans (iris[:,0] >5).
 
 __Aperçu du tableau avant puis après l'indexation booléenne :__
+
 ![image](https://github.com/user-attachments/assets/ec2a4cf1-43c0-46fe-a455-adc6c385ddaf)
+
 
 On constate que les lignes pour lesquelles la valeur de la première colonne est strictement supérieure à 5 sont présentes, mais les autres ne sont plus là.
 
