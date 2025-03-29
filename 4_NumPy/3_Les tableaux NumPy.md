@@ -298,6 +298,85 @@ iris[2,1] # 4.0
 ```
 
 ### b. Indexation booléenne
+Contrairement à l’indexation simple, où on va utiliser les positions des valeurs pour les récupérer, 
+ici, nous allons utiliser des masques booléens (masks, en anglais) pour sélectionner une portion du tableau. 
+
+Comme nous l’avons vu dans les rappels sur Python, 
+les opérateurs relationnels vont pouvoir être utilisés ici pour faire ce qu’on appelle une indexation booléenne.
+
+Imaginons que l’on souhaite garder uniquement les valeurs d’un tableau qui sont supérieures à la valeur 10, la syntaxe serait la suivante :
+```python
+mon_array[mon_array > 10] 
+```
+
+La condition ```mon_array > 10``` va générer un ```ndarray```, de même dimension que le tableau qu’on cherche à indexer, contenant des valeurs booléennes. Ce tableau de valeurs booléennes permettra à Python de savoir quelles valeurs de ```mon_array``` garder : celles aux positions où la valeur est à ```True``` dans le ```ndarray``` généré par ```mon_array > 10```.
+
+Affichons ce que génère le masque booléen iris >2:
+```python
+iris > 2
+```
+
+```python
+array([[ True,  True, False, False, False],
+       [ True,  True, False, False, False],
+       ...
+       ...
+       [ True,  True,  True,  True,  True],
+       [ True,  True,  True, False,  True]])
+```
+
+Cette expression booléenne ```mon_array > 10``` génère un nouveau tableau, de même dimension que le tableau ```iris```, mais qui contient uniquement des booléens, ```True``` ou ```False```. Python sait qu’il doit garder uniquement les valeurs du tableau ```iris``` aux index pour lesquels les valeurs du tableau généré par l’expression booléenne sont à ```True```.
+
+__Note__ : L’expression booléenne génère un ```ndarray``` à 2 dimensions contenant des booléens, que l’on donne entre crochets à notre ```ndarray``` à 2 dimensions d’origine (Iris). Pourtant, en sortie, on obtient un ```ndarray``` à 1 dimension. Cela est dû au fait que certaines colonnes sont à False, ce qui déstructure totalement le ```ndarray```, et Python sort un tableau à une dimension contenant l’ensemble des valeurs étant à True : il ne peut pas faire autrement.
+
+Appliquons une indéxation booléenne sur iris : 
+```python
+iris[iris > 2]
+```
+```
+array([4.9, 3. , 4.7, 3.2, 4.6, 4. , 5. , 3.6, 5.4, 3.9, 4.6, 3.4, 5. ,
+       3.4, 4.4, 2.9, 4.9, 3.1, 5.4, 3.7, 4.8, 3.4, 4.8, 3. , 4.3, 3. ,
+       5.8, 4. , 5.7, 4.4, 5.4, 3.9, 5.1, 3.5, 5.7, 3.8, 5.1, 3.8, 5.4,
+       ...
+       ...
+       6.9, 3.1, 5.1, 2.3, 3. , 5.8, 2.7, 5.1, 3. , 6.8, 3.2, 5.9, 2.3,
+       3. , 6.7, 3.3, 5.7, 2.5, 3. , 6.7, 3. , 5.2, 2.3, 3. , 6.3, 2.5,
+       5. , 3. , 6.5, 3. , 5.2, 3. , 6.2, 3.4, 5.4, 2.3, 3. , 5.9, 3. ,
+       5.1, 3. ])
+```
+Ici, on obtient un tableau, toutes colonnes confondues, avec uniquement les valeurs supérieures à 2. Il n’y a plus de notions de colonnes, il s’agit d’un tableau à une dimension.
+
+Sur ce tableau iris, __il n’y a pas vraiment d’intérêt à appliquer cette condition booléenne sur l’ensemble du tableau__. Mais, par exemple, la cinquième colonne correspond à l’espèce, donc en sélectionnant l’ensemble des valeurs supérieures à 2, on supprime d’office tous les individus d’Iris de l’espèce 1.
+
+Pour appliquer la condition sur une colonne particulière du tableau, il faut la sélectionner en écrivant le masque booléen.
+
+Syntaxe :
+```python
+mon_array[mon_array[:,index_colonne] == 2] 
+```
+Ici, on sélectionne la colonne en donnant sa position à droite de la virgule et on sélectionne l’ensemble des lignes de cette colonne en spécifiant le caractère ```:``` à gauche de la virgule (slicing).
+
+Pour l’exemple, nous allons __sélectionner uniquement les valeurs où la longueur des sépales est supérieure à 5 centimètres__, c’est-à-dire où les valeurs de la première colonne sont supérieures à 5.
+```python
+iris[iris[:,0] > 5]
+```
+```
+array([[5.4, 3.9, 1.7, 0.4, 1. ],
+       [5.4, 3.7, 1.5, 0.2, 1. ],
+       ...
+       ...
+       [6.2, 3.4, 5.4, 2.3, 3. ],
+       [5.9, 3. , 5.1, 1.8, 3. ]])
+```
+Nous prenons le tableau ```iris``` et, entre crochets, nous écrivons notre condition : nous voulons que la première colonne (indice 0) soit supérieure à 5.
+
+__Note__:
+L’expression booléenne "```iris[:,0] >5```" génère un ```ndarray``` à 1 dimension contenant 150 valeurs (car il y a 150 lignes dans le tableau). Ainsi, Python sait qu’il doit garder uniquement les lignes à l’indice où la valeur est à True dans (iris[:,0] >5).
+
+__Aperçu du tableau avant puis après l'indexation booléenne :__
+![image](https://github.com/user-attachments/assets/ec2a4cf1-43c0-46fe-a455-adc6c385ddaf)
+
+On constate que les lignes pour lesquelles la valeur de la première colonne est strictement supérieure à 5 sont présentes, mais les autres ne sont plus là.
 
 ### c. Fancy indexing
 
