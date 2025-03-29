@@ -214,6 +214,7 @@ L’espèce 1.0 correspond à l’espèce Setosa, l’espèce 2.0 à l’espèce
 Ce jeu de données est très populaire en Data Science, car il fonctionne très bien sur de nombreux modèles statistiques. Ici, nous l’utiliserons pour apprendre à créer un ```ndarray``` à partir d’un fichier, mais aussi pour apprendre à explorer et filtrer un ```ndarray``` avec NumPy.
 
 Sur l’image ci-dessous, voici un aperçu du fichier ouvert dans Excel. Le but va être de le lire et de stocker les informations qu’il contient dans un ```ndarray```.
+
 ![iris_Capture d’écran 2025-03-29 123656](https://github.com/user-attachments/assets/0aaf6568-4bb3-4773-98a1-63be1597f5e6)
 
 
