@@ -267,6 +267,35 @@ np.savetxt("C:/Users/chris/Documents/Travaux_personnels_2025/Python pour la Data
 ## 2. Indexation
 
 ### a. Indexation simple
+L’indexation simple permet d’accéder à un élément unique d’un tableau. Un peu comme pour les liste en Python, on utilise les crochets ```[]```.
+
+Syntaxe pour un __ndarray à une dimension__
+```python
+mon_array[2] # permet d’accéder à la troisième valeur du tableau mon_array; car on commence à compter à partir de 0 en Python
+```
+
+Syntaxe pour un __ndarray à deux dimension__
+```python
+mon_array[2,1] # permet d’accéder à la valeur située à la troisième ligne, deuxième colonne du tableau mon_array.
+```
+
+Pour __modifier__ une valeur d’un ndarray
+```python
+mon_array[2,1]=10
+```
+
+```python
+import numpy as np
+iris=np.genfromtxt("C:/Users/chris/Documents/Travaux_personnels_2025/Python pour la Data Science/Jeux_de_donnees/iris.csv", delimiter=";", skip_header=True)
+#print(iris)
+iris[2,1] # 3.1
+```
+
+Modification de valeur : 
+```python
+iris[2,1]=4
+iris[2,1] # 4.0
+```
 
 ### b. Indexation booléenne
 
