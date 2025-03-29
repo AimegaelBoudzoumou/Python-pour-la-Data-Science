@@ -14,6 +14,14 @@ Par exemple, si ```mon_array``` est un tableau à 2 dimensions avec 3 colonnes e
 la fonction doit insérer cette ligne à l'index 1.
 
 ```python
+def ajouter_elements():
+    """Cette fonction a pour but d'ajouter un élément à un emplacement précis d'une liste
+    
+    arguments : un tableau NumPy, une liste et un paramètre position (un entier).
+    
+    retourne le tableau modifié
+    """
+
 ```
 
 ### Ennoncé 2:
