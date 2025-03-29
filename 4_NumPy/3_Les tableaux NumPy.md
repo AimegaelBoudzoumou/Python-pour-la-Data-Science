@@ -45,7 +45,7 @@ mon_array_bidimensionnel.dtype
 ```
 ```dtype('int32')```
 
-Il existe deux types ```int``` : int32 et int64. La différence entre int32 et int64, c’est globalement la capacité de stockage du type. int32 peut stocker des nombres entiers entre -2 147 483 648 et 2 147 483 647 et int64 peut stocker des nombres entiers entre -9 223 372 036 854 775 808 et +9 223 372 036 854 775 808.
+Il existe deux types ```int``` : ```int32``` et ```int64```. La différence entre ```int32``` et ```int64```, c’est globalement la capacité de stockage du type. ```int32``` peut stocker des nombres entiers entre -2 147 483 648 et 2 147 483 647 et ```int64``` peut stocker des nombres entiers entre -9 223 372 036 854 775 808 et +9 223 372 036 854 775 808.
 
 ### b. Créer un ndarray grâce à des fonctions NumPy
 
