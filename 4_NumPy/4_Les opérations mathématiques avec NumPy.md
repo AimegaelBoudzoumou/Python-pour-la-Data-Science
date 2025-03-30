@@ -129,17 +129,20 @@ np.sum(array, axis=0)
 np.sum(array, axis=1) 
 ```
 
-```
+```python
 import numpy as np
+
 print("Somme de l'ensemble des éléments : ")
 print(np.sum(iris))
+
 print("Somme par colone : ")
 print(np.sum(iris, axis=0))
+
 print("Somme par ligne : ")
 print(np.sum(iris, axis = 1))
 ```
 
-```
+```python
 Somme de l'ensemble des éléments : 
 2367.5
 
