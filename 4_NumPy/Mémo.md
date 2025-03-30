@@ -6,6 +6,6 @@
 
 ## Indexation : indexation simple, indexation booléenne, Fancy indexing
 
-## Accéder aux éléments par tranche
+## Accéder aux éléments par tranche (slicing)
 
 ## Notion de vue et de copie
