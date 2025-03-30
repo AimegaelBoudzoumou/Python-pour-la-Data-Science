@@ -163,3 +163,27 @@ Somme par ligne :
  18.8 19.9 20.6 21.2 23.1 20.  18.7 18.7 22.1 20.7 19.8 18.6 20.5 20.8
  20.4 18.5 21.2 21.2 20.2 18.7 19.7 20.3 18.8]
 ```
+
+__Si on veut la moyenne par colonne ainsi que l’écart-type correspondant__
+```python
+import numpy as np
+print(np.mean(iris, axis=0))
+print(np.std(iris, axis=0))
+```
+```python
+[5.84832215 3.05436242 3.7738255  1.20604027 2.00671141]
+[0.82580886 0.43434487 1.75462556 0.75779867 0.81509784]
+```
+
+__Définition de l’écart-type__ : permet de mesurer la dispersion d’un ensemble de valeurs. Plus la distribution des valeurs est dispersée, plus l’écart-type sera élevé. Par rapport à la moyenne, plus l’écart-type est grand, plus les valeurs sont éloignées de la moyenne (donc moins la moyenne est représentative de ces valeurs).
+
+__Nous allons afficher les valeurs maximales de chaque colonne du tableau iris.__
+```python
+import numpy as np
+print(np.max(iris, axis=0))
+```
+
+```python
+[7.9 4.4 6.9 2.5 3. ]
+```
+La longueur de sépale la plus grande est de 7.9 cm, la largeur de sépale la plus grande est de 4.4 cm, la longueur de pétale la plus grande est de 6.9 cm et la largeur de pétale la plus grande est de 2.5 cm.
