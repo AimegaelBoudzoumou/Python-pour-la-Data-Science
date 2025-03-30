@@ -391,12 +391,103 @@ __Aperçu du tableau avant puis après l'indexation booléenne :__
 On constate que les lignes pour lesquelles la valeur de la première colonne est strictement supérieure à 5 sont présentes, mais les autres ne sont plus là.
 
 ### c. Fancy indexing
+Consiste à donner un tableau d’indices (ou une liste d’indices) entre crochets à notre ndarray pour sélectionner plusieurs éléments non consécutifs. 
+
+Alors qu’avec l’indexation simple on n’accède qu’à un seul élément, ici on peut en sélectionner autant qu’on veut. 
+Ce qui est intéressant aussi, c’est que le format du tableau en sortie est le même que celui du tableau d’indices qu’on donne.
+
+Syntaxe :
+```python
+mon_array[[5,2,8,4]]
+```
+On voit que l’ordre des indices peut ne pas être respecté, et qu’on donne autant d’indices qu’on veut. Ici, on va récupérer les valeurs du tableau ```mon_array``` aux indices ```5```, ```2```, ```8``` et ```4```, dans cet ordre. Cela génère un tableau à une dimension puisqu’on donne une unique liste de valeurs.
+
+Pour générer un tableau à deux dimensions, on peut structurer manuellement les indices qu’on donne entre crochets.
+
+Syntaxe :
+```python
+import numpy as np
+
+# Ici, on crée un tableau à deux dimensions de type ndarray avec la fonction array() de NumPy. Ce tableau appelé array_indices, contient les indices
+array_indices=np.array([[4,10,5],[12,8,9]])
+
+# on donne ce tableau entre crochets à mon_array.
+mon_array[array_indices]
+# On obtient en sortie un tableau à deux dimensions (trois colonnes et deux lignes),
+# avec une première ligne contenant les valeurs de mon_array aux indices 4, 10 et 5
+# et une deuxième ligne contenant les valeurs de mon_array aux indices 12, 8 et 9.
+```
+
+Pour l’exemple, créons un tableau à une dimension contenant des nombres de 1 à 20. À partir de ce tableau à une dimension, créons un tableau à deux dimensions avec deux lignes et trois colonnes grâce au fancy indexing.
+```python
+import numpy as np
+# créons un tableau à une dimension contenant des nombres de 1 à 20.
+notre_tableau=np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
+print("Contenu de notre_tableau :")
+print(notre_tableau)
+print("Nouveau tableau après fancy indexing :")
+# À partir de ce tableau à une dimension, créons un tableau à deux dimensions avec deux lignes et trois colonnes grâce au fancy indexing.
+print(notre_tableau[np.array([[4,10,5],[12,8,9]])])
+```
+```
+Contenu de notre_tableau :
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+Nouveau tableau après fancy indexing :
+[[ 5 11  6]
+ [13  9 10]]
+```
+Il faut retenir que l’intérêt du fancy indexing est réellement de pouvoir sélectionner plusieurs valeurs dans un ordre quelconque, mais aussi de pouvoir structurer directement la sortie comme on le souhaite.
 
 ## 3. Accéder aux éléments par tranche (slicing)
+Contrairement à l’indexation simple, qui utilise des indices simples et permet d’accéder à un seul élément, le slicing permet de sélectionner des tranches de tableaux (slices, en anglais) et donc de sélectionner plusieurs éléments du tableau. Avec le slicing, on récupérera ainsi un sous-ensemble du tableau.
+
+syntaxe du slicing avec NumPy : :
+```python
+mon_array[start:stop:step] 
+```
+__start__
+```start``` correspond à l’index auquel on souhaite commencer la sélection. Si elle n’est pas spécifiée, sa valeur par défaut est ```0```, soit le début du tableau
+__stop__
+```stop``` correspond à la valeur d’index à laquelle on veut arrêter la sélection, le numéro d’index donné n’étant pas compris dans la sélection. Exemple : si on donne l’index 5 comme valeur de ```stop```, Python sélectionnera les valeurs jusqu’à l’index 4 (l’index 5 n’étant pas inclus dans la sélection). Si elle n’est pas spécifiée, la valeur par défaut est le dernier index du tableau.
+__step__
+```step``` correspond au pas ; par défaut le pas est de 1.
 
 ### a. Slicing sur un tableau NumPy à 1 dimension
+```python
+import numpy as np
+notre_tableau=np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17, 
+18,19,20])
+# On affiche les trois premiers éléments de ce tableau grâce au slicing. Les valeurs affichées sont celles aux index 0, 1 et 2.
+notre_tableau[:3] # array([1, 2, 3])
+```
+```python
+# À présent, on va afficher toutes les valeurs à partir de l’index 10 jusqu’à la fin du tableau.
+notre_tableau[10:] # array([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+```
+```python
+# Maintenant, on va afficher les éléments des index 3 à 6. 
+# Comme nous voulons afficher la valeur à l’index 6, nous spécifions 7 comme index stop, puisque Python n’inclut pas le stop dans sa sélection.
+notre_tableau[3:7] # array([4, 5, 6, 7])
+```
+```python
+# Si nous souhaitons afficher tous les éléments du tableau avec un pas de 2, cela est possible en spécifiant un step.
+notre_tableau[::2] # array([ 1,  3,  5,  7,  9, 11, 13, 15, 17, 19])
+```
+```python
+
+```
+```python
+```
 
 ### b. Slicing sur un tableau NumPy à 2 dimensions
+Syntaxe :
+```python
+mon_array[start:stop:step, start:stop:step] # Comme pour l’indexing simple, à gauche la slice concerne les lignes, et à droite les colonnes.
+```
+
+
+
+
 
 ## 4. Notion de vue et copie
 
