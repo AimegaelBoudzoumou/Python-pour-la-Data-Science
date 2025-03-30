@@ -17,7 +17,7 @@ array([[10, 11, 12],
 ```
 
 __add()__
-```
+```python
 np.add(mon_tableau,10)
 ```
 ```python
