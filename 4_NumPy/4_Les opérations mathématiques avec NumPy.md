@@ -117,3 +117,45 @@ array([[ 10,  22,  36],
 Ici, chaque valeur d’un tableau est multipliée par la valeur à la même position dans l’autre tableau.
 
 ## Les opérations d'agrégations
+Lorsqu’on a un grand tableau de données, il est important de pouvoir explorer un résumé de ce tableau. La classe ```ndarray``` de NumPy possède des méthodes d’agrégation : ```sum()``` (somme), ```median()``` (médiane), ```mean()``` (moyenne), ```min()``` (minimum), ```max()``` (maximum), ```corrcoef()``` (coefficient de corrélation), ```cumsum()``` (somme cumulative) et ```std()``` (écart-type).
+
+Ces méthodes peuvent être appliquées soit sur l’ensemble des éléments du tableau, soit par colonne ou par ligne, dans le cas de tableaux à deux dimensions. Pour cela, il suffit de préciser l’axe qu’on veut traiter avec l’option ```axis``` : ```axis = 0``` signifie qu’on veut effectuer le calcul par colonne et ```axis = 1``` signifie qu’on veut effectuer le calcul par ligne.
+
+Syntaxe :
+```python
+import numpy as np 
+np.sum(array) 
+np.sum(array, axis=0) 
+np.sum(array, axis=1) 
+```
+
+```
+import numpy as np
+print("Somme de l'ensemble des éléments : ")
+print(np.sum(iris))
+print("Somme par colone : ")
+print(np.sum(iris, axis=0))
+print("Somme par ligne : ")
+print(np.sum(iris, axis = 1))
+```
+
+```
+Somme de l'ensemble des éléments : 
+2367.5
+
+Somme par colone : 
+[871.4 455.1 562.3 179.7 299. ]
+
+Somme par ligne : 
+[10.5 10.4 10.4 11.2 12.4 10.7 11.1  9.9 10.6 11.8 11.  10.3  9.5 12.2
+ 13.  12.  11.3 12.5 11.7 11.7 11.7 10.4 11.6 11.3 10.8 11.4 11.4 11.2
+ 10.7 10.7 11.7 11.9 12.3 10.7 10.6 11.5 11.   9.9 11.2 11.1  9.4 10.1
+ 11.7 12.2 10.5 11.7 10.4 11.7 10.9 18.3 17.6 18.4 15.1 17.4 16.3 17.9
+ 13.6 17.4 15.2 13.5 16.6 15.2 17.1 15.4 17.6 16.6 15.6 16.4 15.1 17.7
+ 16.2 17.2 16.8 16.9 17.4 17.8 18.4 16.9 14.8 14.8 14.6 15.6 17.4 16.4
+ 17.5 18.  16.3 16.  15.3 15.7 17.1 15.6 13.6 15.8 16.1 16.1 16.7 13.7
+ 15.9 21.1 18.5 21.1 19.6 20.5 22.3 16.6 21.3 19.8 22.4 19.8 19.3 20.4
+ 18.2 19.1 20.2 19.8 23.4 22.5 17.7 21.1 18.3 22.2 18.7 20.8 21.2 18.6
+ 18.8 19.9 20.6 21.2 23.1 20.  18.7 18.7 22.1 20.7 19.8 18.6 20.5 20.8
+ 20.4 18.5 21.2 21.2 20.2 18.7 19.7 20.3 18.8]
+```
