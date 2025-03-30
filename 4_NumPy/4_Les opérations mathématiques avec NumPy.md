@@ -10,7 +10,7 @@ import numpy as np
 mon_tableau=np.array([[10,11,12],[13,14,15],[16,17,18]])
 mon_tableau
 ```
-```
+```python
 array([[10, 11, 12],
        [13, 14, 15],
        [16, 17, 18]])
@@ -20,7 +20,7 @@ __add()__
 ```
 np.add(mon_tableau,10)
 ```
-```
+```python
 array([[20, 21, 22],
        [23, 24, 25],
        [26, 27, 28]])
@@ -109,7 +109,7 @@ array([[1, 2, 3],
 np.multiply(mon_tableau1,mon_tableau3)
 ```
 
-```
+```python
 array([[ 10,  22,  36],
        [ 52,  70,  90],
        [112, 136, 162]])
