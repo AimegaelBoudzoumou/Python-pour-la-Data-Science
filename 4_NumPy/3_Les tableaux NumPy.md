@@ -408,7 +408,8 @@ Syntaxe :
 ```python
 import numpy as np
 
-# Ici, on crée un tableau à deux dimensions de type ndarray avec la fonction array() de NumPy. Ce tableau appelé array_indices, contient les indices
+# Ici, on crée un tableau à deux dimensions de type ndarray avec la fonction array() de NumPy.
+# Ce tableau appelé array_indices, contient les indices
 array_indices=np.array([[4,10,5],[12,8,9]])
 
 # on donne ce tableau entre crochets à mon_array.
@@ -426,7 +427,8 @@ notre_tableau=np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 print("Contenu de notre_tableau :")
 print(notre_tableau)
 print("Nouveau tableau après fancy indexing :")
-# À partir de ce tableau à une dimension, créons un tableau à deux dimensions avec deux lignes et trois colonnes grâce au fancy indexing.
+# À partir de ce tableau à une dimension, créons un tableau à deux dimensions
+# avec deux lignes et trois colonnes grâce au fancy indexing.
 print(notre_tableau[np.array([[4,10,5],[12,8,9]])])
 ```
 ```
@@ -485,9 +487,107 @@ Syntaxe :
 mon_array[start:stop:step, start:stop:step] # Comme pour l’indexing simple, à gauche la slice concerne les lignes, et à droite les colonnes.
 ```
 
+```python
+# Affichons les deux premières lignes et les quatre premières colonnes du tableau iris.
+import numpy as np
+iris=np.genfromtxt("C:/Users/chris/Documents/Travaux_personnels_2025/Python pour la Data Science/Jeux_de_donnees/iris.csv", skip_header=True, delimiter=";")
+iris
+```
 
+__Aperçu du tableau iris :__
+```
+array([[4.9, 3. , 1.4, 0.2, 1. ],
+       [4.7, 3.2, 1.3, 0.2, 1. ],
+       [4.6, 3.1, 1.5, 0.2, 1. ],
+       [5. , 3.6, 1.4, 0.2, 1. ],
+       [5.4, 3.9, 1.7, 0.4, 1. ],
+       [4.6, 3.4, 1.4, 0.3, 1. ],
+       [5. , 3.4, 1.5, 0.2, 1. ],
+       ...
+```
 
+__Affichons les deux premières lignes et les quatre premières colonnes du tableau iris.__
+```python
+iris[:2,:4]
+```
+```
+array([[4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2]])
+```
 
+__Affichons les lignes à partir de l’index 145, jusqu’à la dernière ligne, et les colonnes à partir l’index 2, jusqu’à la dernière colonne.__
+
+```python
+iris[145:,2:]
+```
+```
+array([[5. , 1.9, 3. ],
+       [5.2, 2. , 3. ],
+       [5.4, 2.3, 3. ],
+       [5.1, 1.8, 3. ]])
+```
+
+__Pour afficher une ligne précise avec toutes ses colonnes, sans spécifier les colonnes à afficher, on peut mettre le symbole : à droite de la virgule, ce qui signifie "affiche-moi toutes les colonnes".__
+```python
+iris[0,:]
+```
+
+```
+array([4.9, 3. , 1.4, 0.2, 1. ]) # La première ligne (et l’ensemble des colonnes) du tableau iris est affichée.
+```
+
+__Si on veut afficher toutes les lignes de la première colonne, nous mettrons cette fois-ci le symbole : à gauche de la virgule.__
+```python
+iris[:,0]
+```
+```
+array([4.9, 4.7, 4.6, 5. , 5.4, 4.6, 5. , 4.4, 4.9, 5.4, 4.8, 4.8, 4.3,
+       5.8, 5.7, 5.4, 5.1, 5.7, 5.1, 5.4, 5.1, 4.6, 5.1, 4.8, 5. , 5. ,
+       5.2, 5.2, 4.7, 4.8, 5.4, 5.2, 5.5, 4.9, 5. , 5.5, 4.9, 4.4, 5.1,
+       5. , 4.5, 4.4, 5. , 5.1, 4.8, 5.1, 4.6, 5.3, 5. , 7. , 6.4, 6.9,
+       5.5, 6.5, 5.7, 6.3, 4.9, 6.6, 5.2, 5. , 5.9, 6. , 6.1, 5.6, 6.7,
+       5.6, 5.8, 6.2, 5.6, 5.9, 6.1, 6.3, 6.1, 6.4, 6.6, 6.8, 6.7, 6. ,
+       5.7, 5.5, 5.5, 5.8, 6. , 5.4, 6. , 6.7, 6.3, 5.6, 5.5, 5.5, 6.1,
+       5.8, 5. , 5.6, 5.7, 5.7, 6.2, 5.1, 5.7, 6.3, 5.8, 7.1, 6.3, 6.5,
+       7.6, 4.9, 7.3, 6.7, 7.2, 6.5, 6.4, 6.8, 5.7, 5.8, 6.4, 6.5, 7.7,
+       7.7, 6. , 6.9, 5.6, 7.7, 6.3, 6.7, 7.2, 6.2, 6.1, 6.4, 7.2, 7.4,
+       7.9, 6.4, 6.3, 6.1, 7.7, 6.3, 6.4, 6. , 6.9, 6.7, 6.9, 5.8, 6.8,
+       6.7, 6.7, 6.3, 6.5, 6.2, 5.9])
+```
+
+__On peut aussi utiliser des chiffres négatifs, pour réfléchir à l’envers et afficher le tableau à partir de la fin.__
+```python
+iris[-1,:] # array([5.9, 3. , 5.1, 1.8, 3. ]) # La dernière ligne du tableau est affichée.
+```
+Le but du __slicing__ est vraiment d’afficher un sous-tableau d’intérêt à partir d’un grand tableau.
 
 ## 4. Notion de vue et copie
+Lorsqu’on fait du slicing sur un tableau, ce qu’il retourne, c’est une vue du tableau et non pas une copie du tableau.
 
+Ainsi, une modification de ```sous_tableau``` entraîne la modification du tableau initial (tableau de base). Quand on fait une extraction de type __slicing__, on crée une vue de ```tableau initial``` qu’on range dans ```sous_tableau```.
+
+```sous_tableau``` n’est pas un nouvel ```ndarray```, mais bien une vue du ```ndarray``` tableau initial (tableau de base).
+
+__Note__
+Les slices de liste, par exemple, sont bien des copies de la liste originale, c’est-à-dire que si on modifie la sous-liste, la liste initiale n’est pas modifiée. La notion de vue et copie est réellement spécifique à la librairie NumPy.
+
+Vous vous demandez sûrement la raison pour laquelle NumPy crée une vue par défaut. En fait, NumPy a été développée pour travailler sur de très gros tableaux et pour être très performante en calcul scientifique. Ainsi, il faut savoir que créer une copie prend deux fois plus de temps que de créer une vue, mais aussi que quand on crée une copie du tableau, cela prend de la mémoire supplémentaire, alors que la vue partage le même espace mémoire (sur votre ordinateur) que le tableau original. Étant donné que la mémoire est souvent ce qui est limitant dans le cas de gros calculs, cet avantage des vues n’est pas négligeable.
+
+Si toutefois vous voulez vraiment travailler sur une copie du tableau original, c’est-à-dire sur un sous-ensemble du tableau original sans modifier l’original, vous pouvez explicitement créer une copie.
+
+```python
+import numpy as pd
+
+notre_tableau=np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
+sous_tableau=notre_tableau[:5].copy()
+
+sous_tableau[0]=10
+
+print(sous_tableau)
+
+print(notre_tableau)
+```
+```
+[10  2  3  4  5]
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+```
