@@ -31,7 +31,7 @@ Si on veut multiplier l’ensemble des valeurs par 20, on utilisera cette fois-c
 ```python
 np.multiply(mon_tableau,20)
 ```
-```
+```python
 array([[200, 220, 240],
        [260, 280, 300],
        [320, 340, 360]])
@@ -41,7 +41,8 @@ __subtract()__
 ```python
 np.subtract(mon_tableau,4)
 ```
-```
+
+```python
 array([[ 6,  7,  8],
        [ 9, 10, 11],
        [12, 13, 14]])
@@ -51,7 +52,7 @@ __divide()__
 ```python
 np.divide(mon_tableau,5)
 ```
-```
+```python
 array([[2. , 2.2, 2.4],
        [2.6, 2.8, 3. ],
        [3.2, 3.4, 3.6]])
@@ -68,13 +69,13 @@ mon_tableau2=np.array([10,20,30])
 mon_tableau1
 ```
 
-```
+```python
 array([[10, 11, 12],
        [13, 14, 15],
        [16, 17, 18]])
 ```
 
-```
+```python
 mon_tableau2
 ```
 
@@ -86,7 +87,7 @@ array([10, 20, 30])
 np.subtract(mon_tableau1,mon_tableau2)
 ```
 
-```
+```python
 array([[  0,  -9, -18],
        [  3,  -6, -15],
        [  6,  -3, -12]])
@@ -99,7 +100,7 @@ mon_tableau3=np.array([[1,2,3],[4,5,6],[7,8,9]])
 mon_tableau3
 ```
 
-```
+```python
 array([[1, 2, 3],
        [4, 5, 6],
        [7, 8, 9]])
