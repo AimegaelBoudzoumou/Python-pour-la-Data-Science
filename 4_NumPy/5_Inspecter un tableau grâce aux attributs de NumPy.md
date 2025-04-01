@@ -3,7 +3,7 @@
 Les objets de classe ```ndarray``` (les tableaux NumPy) possèdent un ensemble d’attributs qui permettent de les inspecter. La liste de ces attributs est disponible dans la documentation de NumPy, dans la partie Attributes : https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html
 
 Voici quelques-uns attributs :
-- ```dtype````: le type des éléments d’un tableau.
+- ```dtype```: le type des éléments d’un tableau.
 - ```size```: le nombre d’éléments contenus dans un tableau.
 - ```T```: faire la transposée d’un tableau, c’est-à-dire de permuter les dimensions (les lignes devenant les colonnes et les colonnes les lignes)T.
 - ```ndim```: connaître la dimension d’un tableau, afin de savoir s’il s’agit d’un tableau à une dimension, deux dimensions, trois dimensions, etc.
