@@ -38,6 +38,24 @@ Si ```type_array``` a une valeur non valide, la fonction doit lever une exceptio
 Par exemple, pour des entrées ```((4, 6), "zeros")```, la fonction doit retourner un tableau de zéros de type float avec 4 lignes et 6 colonnes.
 
 ```python
+def creer_ndarray(dimensions, type_array, dtype=float):
+    """Cette fonction crée un ndarray.
+    
+    arguments : dimensions (un tuple contenant le nombre de lignes et de colonnes) 
+    et type_array (une chaîne qui peut être "zeros", "ones" ou "empty")
+    
+    retourne un ndarray
+    """
+    import numpy as numpy
+    
+    # vérfier que dimensions est bien n tuple
+    
+    # vérifier que les valeurs dans dimensions sont bien des nombres entiers
+    
+    # vérifier que type_array contient bien "zeros", "ones" ou "empty"
+    
+    # 
+    
 ```
 
 ### Ennoncé 3:
