@@ -8,6 +8,23 @@ La fonction doit retourner le tableau créé. Si le type de données fourni n'es
 Par exemple, pour une entrée de ```[[1, 2, 3], [4, 5, 6]]``` et ```dtype="int"```, la fonction doit retourner un tableau d'entiers.
 
 ```python
+def creer_tableau(liste_de_liste, dtype):
+    """Cette fonction crée un tableau à partir d'informations qu'on lui fournit
+    
+    arguments : une liste de listes (représentant un tableau bidimensionnel) 
+    et un paramètre dtype (de type chaîne)
+    
+    retourne un tableau Numpy
+    """
+    import numpy as np
+    
+    type_autorises = {"int", "float"}
+    
+    if dtype not in type_autorises:
+        raise ValueError("Type de données invalide")
+    
+    return np.array(liste_de_liste, dtype = dtype)
+
 ```
 
 ### Ennoncé 2:
