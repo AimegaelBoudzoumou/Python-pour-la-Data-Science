@@ -39,6 +39,9 @@ Par exemple, pour des entrées ```((4, 6), "zeros")```, la fonction doit retourn
 
 ```python
 def creer_ndarray(dimensions, type_array, dtype=float):
+    import numpy as np
+
+def creer_ndarray(dimensions, type_array, dtype=float):
     """Cette fonction crée un ndarray.
     
     arguments : dimensions (un tuple contenant le nombre de lignes et de colonnes) 
@@ -46,15 +49,33 @@ def creer_ndarray(dimensions, type_array, dtype=float):
     
     retourne un ndarray
     """
-    import numpy as numpy
     
     # vérfier que dimensions est bien n tuple
+    if not isinstance(dimensions, tuple) or len(dimensions) != 2:
+        raise ValueError("dimensions doit être un tuple et doit avoir deux éléments")
     
     # vérifier que les valeurs dans dimensions sont bien des nombres entiers
+    if not isinstance(dimensions[0], int) or not isinstance(dimensions[1], int):
+        raise ValueError("Les dimensions doivent être composées de deux entiers")
+        
+    # vérifier que les dimensions sont positives
+    if dimensions[0] < 0 or dimensions[1] < 0:
+        raise ValueError("Les dimensions doivent être positives")
     
     # vérifier que type_array contient bien "zeros", "ones" ou "empty"
+    type_de_donnees_autorisees = {"zeros", "ones", "empty"}
+    if type_array not in type_de_donnees_autorisees:
+        raise ValueError("Type de tableau invalide")
     
-    # 
+    if type_array == "zeros":
+        return np.zeros(dimensions, dtype=dtype)
+    elif type_array == "ones":
+        return np.ones(dimensions, dtype=dtype)
+    elif type_array == "empty":
+        return np.empty(dimensions, dtype=dtype)
+    
+    # Amélioration possible : Le code pourrait être amélioré en utilisant des assertions 
+    # pour vérifier les préconditions, ce qui rendrait le code plus lisible.
     
 ```
 
