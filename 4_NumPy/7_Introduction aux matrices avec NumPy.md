@@ -45,8 +45,7 @@ print(array2)
 print("----------- array2 puissance 2")
 # exemple de code pour obtenir un ndarray de chaque élément de array2 puissance 2 :
 print(array2**2)
-```
-```python
+
 ----------- array2 de base
 [[1. 2. 3.]
  [4. 5. 6.]
@@ -55,13 +54,6 @@ print(array2**2)
 [[ 1.  4.  9.]
  [16. 25. 36.]
  [49. 64. 81.]]
-```
-
-```python
-# 3 exemples de code pour obtenir le produit matriciel d'une matrice avec elle-même 
-print(np.mat(array2)**2) 
-print(np.mat(array2)*np.mat(array2)) 
-print(array2.dot(array2))
 ```
 
 ```python
