@@ -40,7 +40,7 @@ import numpy as np
 iris=np.genfromtxt("C:/Users/chris/Documents/Travaux_2025/Python Data Science/Jeux_de_donnees/iris.csv", delimiter=";", skip_header=True)
 iris
 ```
-```
+```python
 array([[4.9, 3. , 1.4, 0.2, 1. ],
        [4.7, 3.2, 1.3, 0.2, 1. ],
        ...
@@ -53,7 +53,7 @@ Ajouter une ligne à la fin du tableau:
 np.append(iris,[[10,10,10,10,10]], axis=0)
 ```
 
-```
+```python
 array([[4.9, 3. , 1.4, 0.2, 1. ],
        [4.7, 3.2, 1.3, 0.2, 1. ],
        ...
@@ -98,7 +98,7 @@ iris __avant__ ```insert``` à la position 1:
 ```python
 iris
 ```
-```
+```python
 array([[4.9, 3. , 1.4, 0.2, 1. ],
        [4.7, 3.2, 1.3, 0.2, 1. ],
        [4.6, 3.1, 1.5, 0.2, 1. ],
@@ -114,7 +114,7 @@ iris __après__ ```insert``` à la position 1:
 ```python
 iris
 ```
-```
+```python
 array([[ 4.9,  3. ,  1.4,  0.2,  1. ],
        [10. , 10. , 10. , 10. , 10. ],
        [ 4.7,  3.2,  1.3,  0.2,  1. ],
@@ -139,7 +139,7 @@ iris __avant__ ```delete``` de la colonne 2 (à l’index 1):
 ```python
 iris
 ```
-```
+```python
 array([[4.9, 3. , 1.4, 0.2, 1. ],
        [4.7, 3.2, 1.3, 0.2, 1. ],
        [4.6, 3.1, 1.5, 0.2, 1. ],
@@ -153,7 +153,7 @@ np.delete(iris, 1, axis = 1)
 ```
 
 iris __après__ ```delete``` de la colonne 2 (à l’index 1):
-```
+```python
 array([[4.9, 1.4, 0.2, 1. ],
        [4.7, 1.3, 0.2, 1. ],
        [4.6, 1.5, 0.2, 1. ],
