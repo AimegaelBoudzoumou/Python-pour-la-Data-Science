@@ -1,6 +1,6 @@
-# Manipuler des tableaux Numpy
+# Manipuler des tableaux Numpy - 1/3
 
-## 1. Ajouter et supprimer des éléments dans un tableau - 1/3
+## 1. Ajouter et supprimer des éléments dans un tableau
 
 ### a. Ajouter des éléments dans un tableau
 Soit on ajoute les éléments à la fin du tableau avec la fonction ```append()``` de NumPy, 
