@@ -103,4 +103,10 @@ et un ```seuil``` de ```5```, elle doit retourner :
 Assure-toi que la fonction gère correctement les cas où aucune ligne ne satisfait la condition en retournant un tableau vide.
 
 ```python
+ """cette fonction filtre un tableau
+    
+    arguments : un tableau NumPy tableau et une valeur seuil
+    
+    
+    """
 ```
