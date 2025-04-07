@@ -72,9 +72,6 @@ print("-----------")
 print(np.mat(array2)*np.mat(array2))
 print("-----------")
 print(array2.dot(array2))
-```
-
-```python
 -----------
 [[ 30.  36.  42.]
  [ 66.  81.  96.]
