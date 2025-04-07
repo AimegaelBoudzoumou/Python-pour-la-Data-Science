@@ -1,4 +1,4 @@
-# Manipuler des tableaux Numpy
+# Manipuler des tableaux Numpy - 2/3
 
 ## 2. Diviser un tableau NumPy (split, hsplit et vsplit)
 
