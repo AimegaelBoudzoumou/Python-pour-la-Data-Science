@@ -103,10 +103,25 @@ et un ```seuil``` de ```5```, elle doit retourner :
 Assure-toi que la fonction gère correctement les cas où aucune ligne ne satisfait la condition en retournant un tableau vide.
 
 ```python
- """cette fonction filtre un tableau
+import numpy as np
+
+def filtrer_tableau(tableau, seuil):
+    """cette fonction crée un nouveau tableau
     
-    arguments : un tableau NumPy tableau et une valeur seuil
+    arguments : un tableau NumPy et une valeur seuil
     
-    
+    retourne un nouveau tableau contenant uniquement les lignes de tableau 
+    pour lesquelles les valeurs de la première colonne sont supérieures au seuil
     """
+    
+    # vérifications pour s'assurer que l'entrée est bien un tableau NumPy non vide
+    if isinstance(tableau, np.ndarray) and tableau.size > 0:
+        
+        # vérifications pour s'assurer que le seuil est un nombre.
+        if isinstance(seuil, (int, float)):
+            
+            return tableau[tableau[:,0] > seuil]
+            
+    return np.empty((0, tableau.shape[1]))
+    #return np.empty_like(tableau) # à exploiter
 ```
