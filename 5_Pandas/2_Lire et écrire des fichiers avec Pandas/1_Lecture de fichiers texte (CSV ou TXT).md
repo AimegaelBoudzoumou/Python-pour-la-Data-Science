@@ -50,7 +50,7 @@ Il est simplement logique d’utiliser la fonction read_table() pour des fichier
 
 ```python
 import pandas as pd
-donnees=pd.read_csv(r"Documents\Travaux_2025\Python Data Science\JO_Dataset\athlete_events.csv")
+donnees=pd.read_csv(r"Python Data Science\JO_Dataset\athlete_events.csv")
 donnees.head()
 ```
 
@@ -97,7 +97,7 @@ Imaginons que nous souhaitions supprimer l’en-tête en anglais de notre fichie
 
 ```python
 import pandas as pd 
-donnees_francais=pd.read_csv(r"C:\Users\chris\Documents\Travaux_2025\Python Data Science\JO_Dataset\athlete_events.csv",skiprows=1, names=["Id","Nom", 
+donnees_francais=pd.read_csv(r"Python Data Science\JO_Dataset\athlete_events.csv",skiprows=1, names=["Id","Nom", 
 "Sexe", "Age", "Taille", "Poids", "Equipe", "CNO", "Jeux",  
 "Annee", "Saison", "Ville", "Sport", "Epreuve", "Medaille"]) 
 donnees_francais.head()
@@ -128,7 +128,7 @@ Lorsqu’on regarde notre tableau donnees, on constate qu’il y a une colonne `
 
 ```python
 import pandas as pd
-donnees_1index=pd.read_csv(r"C:\Users\chris\Documents\Travaux_2025\Python Data Science\JO_Dataset\athlete_events.csv", index_col=[0])
+donnees_1index=pd.read_csv(r"Python Data Science\JO_Dataset\athlete_events.csv", index_col=[0])
 donnees_1index.head()
 ```
 
@@ -171,7 +171,7 @@ Passons à l’exemple pratique. Si on ne souhaite sélectionner que les colonne
 
 ```python
 import pandas as pd
-donnees_usecols_position=pd.read_csv(r"C:\Users\chris\Documents\Travaux_2025\Python Data Science\JO_Dataset\athlete_events.csv", usecols=[1,4,5])
+donnees_usecols_position=pd.read_csv(r"Python Data Science\JO_Dataset\athlete_events.csv", usecols=[1,4,5])
 donnees_usecols_position.head()
 ```
 
@@ -179,7 +179,7 @@ Dans le code précédent, nous sélectionnons les colonnes grâce à leurs posit
 
 ```python
 import pandas as pd
-donnees_usecols_position=pd.read_csv(r"C:\Users\chris\Documents\Travaux_2025\Python Data Science\JO_Dataset\athlete_events.csv", usecols=[1,4,5])
+donnees_usecols_position=pd.read_csv(r"Python Data Science\JO_Dataset\athlete_events.csv", usecols=[1,4,5])
 donnees_usecols_position.head()
 ```
 
@@ -230,7 +230,7 @@ Ici, notre colonne représentant l’année des JO est considérée comme un typ
 
 ```python
 import pandas as pd
-donnees=pd.read_csv(r"C:\Users\chris\Documents\Travaux_2025\Python Data Science\JO_Dataset\athlete_events.csv", parse_dates=[9])
+donnees=pd.read_csv(r"Python Data Science\JO_Dataset\athlete_events.csv", parse_dates=[9])
 donnees.head()
 ```
 
