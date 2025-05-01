@@ -222,7 +222,7 @@ donnees.dtypes
 
 Pour l’instant, si on regarde le type de la colonne 9, on a le résultat suivant.
 
-```
+```python
 Year        int64
 ```
 
@@ -240,7 +240,7 @@ donnees.head()
 donnees.dtypes
 ```
 
-```
+```python
 Year      datetime64[ns]
 ```
 
