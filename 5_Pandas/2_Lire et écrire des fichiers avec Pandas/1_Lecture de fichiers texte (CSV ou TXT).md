@@ -216,7 +216,7 @@ Lorsque nous visualiserons notre tableau, nous pourrons constater que le ```dtyp
 __Pratiquons :__
 On sait que la colonne 9 de notre dataframe correspond à l’année des Jeux olympiques auxquels ont participé les athlètes. On pourrait vouloir dire à Pandas de considérer cette colonne comme une date.
 
-````python
+```python
 donnees.dtypes
 ```
 
