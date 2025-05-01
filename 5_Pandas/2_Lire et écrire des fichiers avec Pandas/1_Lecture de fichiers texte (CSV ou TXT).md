@@ -10,11 +10,11 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## a. Lecture basique d’un fichier
+
 Lorsqu’on souhaite utiliser Pandas pour analyser des données, la première étape est généralement d’importer les données dans son notebook. Les fichiers peuvent être de différents formats, mais le plus courant en Data Science est le format CSV. CSV signifie comma-separated values, traduisez : "valeurs séparées par une virgule". 
 
 Il s’agit donc d’un format texte, dans lequel les colonnes sont séparées par des virgules. L’autre format très courant est le format TXT, qui lui aussi est un format texte, mais contenant des valeurs séparées par des tabulations, cette fois.
-
-## a. Lecture basique d’un fichier
 
 ### read_table()
 
