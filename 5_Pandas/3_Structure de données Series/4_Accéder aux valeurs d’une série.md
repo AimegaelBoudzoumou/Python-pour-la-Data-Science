@@ -227,7 +227,50 @@ ma_serie_de_poids_index_defaut.iloc[2:11:2]
 
 ![image](https://github.com/user-attachments/assets/b223aebe-a83a-4fa2-a26d-098e33750f67)
 
+En plus des options start, stop et step qui permettent de faire du slicing, il existe quelques autres syntaxes de slicing intéressantes à utiliser, dont nous allons voir quelques exemples tout de suite.
 
+- Il est possible de sélectionner des données d’une position start jusqu’à la fin de la série, avec la syntaxe suivante :
+```python
+Serie.iloc[start:]
+```
 
+- On peut aussi sélectionner des valeurs du début de la série jusqu’à une position stop, avec la syntaxe :
+```python
+Serie.iloc[:stop]
+```
 
+- Enfin, il faut savoir que les valeurs start et stop peuvent être négatives, ce qui signifie que Pandas commence à compter par la fin de la série.
+Par exemple, la syntaxe suivante :
+```python
+Serie.iloc[-1:]
+```
+permet d’afficher la dernière valeur de la série. En effet, ```-1``` signifie la dernière valeur d’une liste, série ou autre ensemble de données séquentielles. En lui demandant d’aller de ```-1``` jusqu’à la fin de la série, grâce à la syntaxe ```[-1:]```, Pandas n’affichera donc que la dernière valeur.
 
+- Pour afficher les deux dernières valeurs de la série, la syntaxe serait la suivante :
+```python
+Series.iloc[-2:]
+```
+
+- Enfin, pour afficher toutes les valeurs de la série, sans les deux dernières, la syntaxe serait la suivante :
+```python
+Series.iloc[:-2]
+```
+
+__Pratiquons__
+
+```python
+# Ce slicing génère un nouvelle série qui va de la position 1000 jusqu’à la fin de la série dont elle provient.
+ma_serie_de_poids_index_defaut.iloc[1000:]
+```
+
+```python
+# Pour afficher les vingt premières valeurs, le code est le suivant :
+ma_serie_de_poids_index_defaut.iloc[:20] 
+```
+
+```python
+# Enfin, affichons la dernière valeur de notre série, avec le code suivant :
+ma_serie_de_poids_index_defaut.iloc[-1:] 
+```
+
+Il faut savoir que lorsqu’on découpe un objet Python à l’aide du slicing, le sous-objet créé est de même type que l’objet dont il provient. Par exemple, si on fait du slicing sur une série de type numérique, l’objet créé après le slicing sera une série de type numérique. De même que si nous effectuons un slicing sur une liste, l’objet créé sera une liste.
