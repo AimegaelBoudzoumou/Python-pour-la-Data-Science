@@ -162,6 +162,17 @@ ma_serie_de_poids[ma_serie_de_poids > 90]
 
 ![image](https://github.com/user-attachments/assets/3e4e079c-7777-48f5-ac9b-6555c01a7906)
 
-Suite à cet indexing...
+Suite à cet indexing, on sait maintenant que 16819 valeurs sont strictement supérieures à 90 dans cette série.
+
+Si on souhaite effectuer plusieurs expressions booléennes, il faudra utiliser les opérateurs ```&``` (pour et), ```|``` (pour ou) et ```~``` (pour la négation). On les appelle les opérateurs bitwise (comparaison bit à bit) en Python.
+
+__Note__
+Dans les chapitres précédents, et notamment dans le chapitre sur les rappels Python, nous avions utilisé les opérateurs logiques, ```and```, ```or``` et ```not```. Les opérateurs logiques fonctionnent bien sur des expressions qui renvoient une valeur ```True``` unique, ou une valeur ```False``` unique. Ici, les expressions booléennes retournent des séries de ```True``` et de ```False```, pour chaque individu. Et dans ce cas, l’utilisation d’opérateurs logiques générera une erreur, alors que l’utilisation des opérateurs bitwise fonctionnera.
+
+Par exemple, pour récupérer l’ensemble des valeurs strictement supérieures à 90 et strictement inférieures à 100, on peut utiliser l’opérateur ```&```.
+
+```python
+
+```
 
 ## e. Slicing : découpage de valeurs successives
