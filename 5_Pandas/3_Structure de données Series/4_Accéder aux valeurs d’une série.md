@@ -101,21 +101,32 @@ serie.iloc[position]
 
 Les attributs sont suivis des étiquettes ou positions auxquelles on souhaite récupérer des valeurs, entre crochets ```[]```.
 
+__Pratiquons__
+ON va créer une série nommée ```ma_serie```, qui contient quatre valeurs et dont les noms d'index sont respectivement 1,3,2 et 0.
+```python
+import pandas as pd
+ma_serie = pd.Series([10,11,12,13], [1,3,2,0])
+print(ma_serie)
+```
+![image](https://github.com/user-attachments/assets/d5687999-7951-4706-a97f-05d222ddc0be)
+
+### loc
+
 L’attribut loc va demander à Pandas d’utiliser les noms d’index, les étiquettes, pour sélectionner les valeurs dans la série.
 
 ```python
-
+ma_serie.loc[0] # affichera 13
 ```
 
 L’attribut loc retourne la valeur dont le nom de l’index est 0.
 
+### iloc
+
 L’attribut iloc va demander à Pandas d’utiliser la position des valeurs pour les sélectionner dans la série.
 
 ```python
-
+ma_serie.iloc[0] # affichera 10
 ```
-
-
 
 ## d. Indexing via une expression booléenne
 
