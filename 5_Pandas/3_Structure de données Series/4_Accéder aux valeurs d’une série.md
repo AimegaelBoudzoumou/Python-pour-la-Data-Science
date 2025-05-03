@@ -178,3 +178,34 @@ ma_serie_de_poids[ (ma_serie_de_poids>90) & (ma_serie_de_poids<100) ]
 ![image](https://github.com/user-attachments/assets/0a58d304-dae1-46fc-9f63-3587965e1960)
 
 ## e. Slicing : découpage de valeurs successives
+Tout comme pour les listes en Python, il est possible de faire du slicing (découpage) sur des séries, grâce aux symboles crochets ```[]``` et deux-points ```:```.
+
+En Python, les _slices_ permettent de sélectionner des valeurs au sein de données, comme par exemple ici, les séries. 
+
+Toutefois, contrairement aux listes, le slicing d’une série coupe/sélectionne les valeurs, mais aussi les index. 
+
+La différence avec l’indexing est aussi que le slicing récupère des données consécutives, comprises dans un intervalle et n’utilise que des positions comme paramètres (on n’utilise pas les étiquettes, cela génère une erreur). 
+
+Le but du slicing, tout comme l’indexing, est de récupérer un sous-ensemble de données qui nous intéressent.
+
+Dans le cas où nous souhaitons sélectionner des valeurs au sein d’une série, la syntaxe générale est la suivante :
+```python
+serie[start:stop:step] 
+```
+
+Une autre possibilité pour le slicing qui est même conseillée est d’utiliser la méthode ```iloc``` plutôt que les crochets. Pour rappel, la méthode 
+```iloc``` permet de sélectionner des valeurs selon leur position. Précédemment, nous l’avons utilisée en lui précisant les positions à récupérer, mais sachez qu’il est aussi possible de lui donner des slices.
+
+Syntaxe du slicing avec iloc
+```python
+serie.iloc[start:stop:step] 
+```
+
+Ici, on lui donne une slice en précisant la position de départ et la position de fin des valeurs, en sachant qu’il s’agit des valeurs jusqu’à la position ```stop``` non incluse. Attention donc, car ce qu’attend Python est la position de fin souhaitée + 1.
+
+__Pratiquons__
+On va récupérer les valeurs aux positions 3 et 4 de la série:
+```python
+
+```
+
