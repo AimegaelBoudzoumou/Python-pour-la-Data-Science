@@ -172,7 +172,9 @@ Dans les chapitres précédents, et notamment dans le chapitre sur les rappels P
 Par exemple, pour récupérer l’ensemble des valeurs strictement supérieures à 90 et strictement inférieures à 100, on peut utiliser l’opérateur ```&```.
 
 ```python
-
+ma_serie_de_poids[ (ma_serie_de_poids>90) & (ma_serie_de_poids<100) ]
 ```
+
+![image](https://github.com/user-attachments/assets/0a58d304-dae1-46fc-9f63-3587965e1960)
 
 ## e. Slicing : découpage de valeurs successives
