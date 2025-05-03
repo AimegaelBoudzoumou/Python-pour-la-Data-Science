@@ -129,5 +129,21 @@ ma_serie.iloc[0] # affichera 10
 ```
 
 ## d. Indexing via une expression booléenne
+Enfin, il est possible de faire de l’indexing en utilisant une expression booléenne. Ici, cet indexing ne se base plus sur les positions ou les étiquettes des valeurs, __mais réellement sur les valeurs de la série__. 
+
+Par exemple, si on veut récupérer l’ensemble des valeurs strictement supérieures à ```10``` dans la série, la syntaxe est la suivante :
+
+```python
+ma_serie[ma_serie>10]
+```
+
+Ainsi, il s’agit d’utiliser les opérateurs de comparaisons (<, <=, >, >=, ==, !=) pour effectuer l’indexing.
+
+__Pratiquons__
+Illustrons cela avec un exemple. Sélectionnons uniquement les athlètes avec un poids strictement supérieur à 90 kg.
+```python
+
+```
+
 
 ## e. Slicing : découpage de valeurs successives
