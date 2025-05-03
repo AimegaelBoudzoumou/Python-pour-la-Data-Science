@@ -43,11 +43,29 @@ ma_serie_de_poids_index_defaut = ma_serie_de_poids_index_defaut.squeeze()
 ma_serie_de_poids_index_defaut[[0, 15,6985,452]]
 ```
 
+Le premier couple de crochets ```ma_serie_de_poids_index_defaut[]``` correspond à la syntaxe pour sélectionner des données et le deuxième couple de crochets ```[0,15,6985,452]``` correspond à la liste des positions auxquelles on souhaite récupérer des valeurs.
+
 ![image](https://github.com/user-attachments/assets/4f12d83d-b368-4393-9599-bccf3c27cbca)
 
-
+Nous venons de récupérer les valeurs aux positions 0, 15, 6985 et 452.
 
 ## b. Indexing via l’étiquette des valeurs
+Il est aussi possible de sélectionner des valeurs selon l’étiquette de ces valeurs. Par exemple, imaginons que nous voulons sélectionner la valeur dont l’étiquette est la chaîne de caractères "```ma_valeur```". La syntaxe sera la suivante :
+
+```python
+ma_serie["ma_valeur"]
+```
+
+Pour sélectionner plusieurs valeurs :
+
+```python
+ma_serie[["ma_valeur1", "ma_valeur2","ma_valeur3"]] 
+```
+
+Pour l’exemple de cette sous-section, nous allons repartir sur la série que nous avons créée précédemment et sur laquelle nous avons redéfini les index avec les noms des athlètes : ma_serie_de_poids.
+```python
+
+```
 
 ## c. Les indexeurs loc et iloc
 
