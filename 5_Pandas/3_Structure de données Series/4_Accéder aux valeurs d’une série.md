@@ -262,15 +262,18 @@ __Pratiquons__
 # Ce slicing génère un nouvelle série qui va de la position 1000 jusqu’à la fin de la série dont elle provient.
 ma_serie_de_poids_index_defaut.iloc[1000:]
 ```
+![image](https://github.com/user-attachments/assets/6e31c342-ebff-47ec-adba-c8bef41b58eb)
 
 ```python
 # Pour afficher les vingt premières valeurs, le code est le suivant :
 ma_serie_de_poids_index_defaut.iloc[:20] 
 ```
+![image](https://github.com/user-attachments/assets/939034f0-e99f-4476-b962-62d491c1d72a)
 
 ```python
 # Enfin, affichons la dernière valeur de notre série, avec le code suivant :
 ma_serie_de_poids_index_defaut.iloc[-1:] 
 ```
+![image](https://github.com/user-attachments/assets/eaa71415-9d2a-4279-aed1-6acf21fc7843)
 
 Il faut savoir que lorsqu’on découpe un objet Python à l’aide du slicing, le sous-objet créé est de même type que l’objet dont il provient. Par exemple, si on fait du slicing sur une série de type numérique, l’objet créé après le slicing sera une série de type numérique. De même que si nous effectuons un slicing sur une liste, l’objet créé sera une liste.
