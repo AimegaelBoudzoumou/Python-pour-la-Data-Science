@@ -204,8 +204,30 @@ serie.iloc[start:stop:step]
 Ici, on lui donne une slice en précisant la position de départ et la position de fin des valeurs, en sachant qu’il s’agit des valeurs jusqu’à la position ```stop``` non incluse. Attention donc, car ce qu’attend Python est la position de fin souhaitée + 1.
 
 __Pratiquons__
+
 On va récupérer les valeurs aux positions 3 et 4 de la série:
 ```python
-
+import pandas as pd
+ma_serie_de_poids_index_defaut=pd.read_csv("athlete_events.csv", usecols=[5])
+ma_serie_de_poids_index_defaut = ma_serie_de_poids_index_defaut.squeeze()
+ma_serie_de_poids_index_defaut.iloc[3:5]
 ```
+![image](https://github.com/user-attachments/assets/9f4b91e1-8e8c-4c6a-bcc4-c1e3c380d178)
+
+__Pratiquons__
+
+On va récupérer les valeurs aux positions 2, jusqu'à 11, par pas de 2:
+
+```python
+import pandas as pd
+ma_serie_de_poids_index_defaut=pd.read_csv("athlete_events.csv", usecols=[5])
+ma_serie_de_poids_index_defaut = ma_serie_de_poids_index_defaut.squeeze()
+ma_serie_de_poids_index_defaut.iloc[2:11:2]
+```
+
+![image](https://github.com/user-attachments/assets/b223aebe-a83a-4fa2-a26d-098e33750f67)
+
+
+
+
 
