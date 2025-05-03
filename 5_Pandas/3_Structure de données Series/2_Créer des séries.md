@@ -61,5 +61,7 @@ Pour rappel, l’option ```squeeze``` permet de dire à Pandas que l’on souhai
 Nous allons sélectionner la colonne ```Weight``` de notre tableau, qui correspond au poids des athlètes.
 
 ```python
-
+import pandas as pd
+ma_serie_de_poids_index_defaut=pd.read_csv("athlete_events.csv", usecols=[5])
+ma_serie_de_poids_index_defaut.squeeze()
 ```
