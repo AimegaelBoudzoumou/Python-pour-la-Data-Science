@@ -4,9 +4,6 @@ Voici un aperçu d'un fichier Json :
 
 ![image](https://github.com/user-attachments/assets/10248d49-8dbf-4074-959f-d14804769a36)
 
-![image](https://github.com/user-attachments/assets/103dd1c4-a10f-49fa-9c72-7146e74c39a4)
-
-
 Pour expliquer brièvement ce format, l’ensemble des données sont stockées entre crochets ```[]```. Puis, chaque individu ou observation est stocké entre accolades ```{}```, ces accolades pouvant être comparées aux lignes d’un tableau classique. Enfin, chaque accolade contient l’ensemble des informations (des colonnes) de l’individu/observation sous forme de clés-valeurs séparées par des virgules. Chaque couple clé-valeur représente une colonne de la ligne.
 
 La librairie Pandas propose une fonction appelée ```read_json()``` qui permet de lire un fichier au format JSON.
