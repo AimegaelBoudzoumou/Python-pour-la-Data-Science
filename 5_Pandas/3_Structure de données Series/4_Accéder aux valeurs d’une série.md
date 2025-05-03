@@ -142,8 +142,26 @@ Ainsi, il s’agit d’utiliser les opérateurs de comparaisons (<, <=, >, >=, =
 __Pratiquons__
 Illustrons cela avec un exemple. Sélectionnons uniquement les athlètes avec un poids strictement supérieur à 90 kg.
 ```python
+import pandas as pd
+ma_serie_de_poids=pd.read_csv("athlete_events.csv", usecols=["Weight", "Name"], index_col=["Name"])
+ma_serie_de_poids = ma_serie_de_poids.squeeze()
+ma_serie_de_poids
+```
+![image](https://github.com/user-attachments/assets/de749145-94ba-46ae-90ca-184e5412963d)
 
+```python
+ma_serie_de_poids > 90
+```
+![image](https://github.com/user-attachments/assets/558225cc-2e59-41b9-88cd-6c02479d99f9)
+
+On constate une série de valeurs à ```True``` et à ```False```, de même taille que l'objet ```ma_serie```, sachant que seuls les athlètes à ```True```seront gardés dans le code ci-dessous :
+
+```python
+ma_serie_de_poids[ma_serie_de_poids > 90]
 ```
 
+![image](https://github.com/user-attachments/assets/3e4e079c-7777-48f5-ac9b-6555c01a7906)
+
+Suite à cet indexing...
 
 ## e. Slicing : découpage de valeurs successives
