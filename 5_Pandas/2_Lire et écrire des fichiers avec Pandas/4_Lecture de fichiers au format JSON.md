@@ -3,6 +3,7 @@
 Voici un aperçu d'un fichier Json :
 
 ![image](https://github.com/user-attachments/assets/10248d49-8dbf-4074-959f-d14804769a36)
+
 ![image](https://github.com/user-attachments/assets/103dd1c4-a10f-49fa-9c72-7146e74c39a4)
 
 
