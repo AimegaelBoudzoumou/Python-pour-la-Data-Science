@@ -86,10 +86,36 @@ ma_serie_de_poids[["Antti Sami Aalto", "Andrzej ya"]]
 
 ![image](https://github.com/user-attachments/assets/4a5a4a9d-3913-497c-af36-f77cf6ca7582)
 
+Ce code nous permet d’accéder à l’information de poids de ces deux athlètes qui font respectivement 96 et 89 kg.
 
-
+L’indexing avec les positions des valeurs ou leurs étiquettes, entre crochets [], est très répandu mais peut être à l’origine d’erreurs de mauvaise sélection de données. Pour que ces erreurs n’arrivent pas, les attributs .loc et .iloc ont été mis en place.
 
 ## c. Les indexeurs loc et iloc
+Pandas propose deux indexeurs pour spécifier à Python si nous souhaitons effectuer l’indexing sur les étiquettes d’index ou sur les positions des valeurs dans la série : ce sont les indexeurs loc et iloc. Ces indexeurs peuvent être considérés comme des attributs des objets de classe Series et DataFrame.
+
+Syntaxe:
+```python
+serie.loc[etiquette] 
+serie.iloc[position]
+```
+
+Les attributs sont suivis des étiquettes ou positions auxquelles on souhaite récupérer des valeurs, entre crochets ```[]```.
+
+L’attribut loc va demander à Pandas d’utiliser les noms d’index, les étiquettes, pour sélectionner les valeurs dans la série.
+
+```python
+
+```
+
+L’attribut loc retourne la valeur dont le nom de l’index est 0.
+
+L’attribut iloc va demander à Pandas d’utiliser la position des valeurs pour les sélectionner dans la série.
+
+```python
+
+```
+
+
 
 ## d. Indexing via une expression booléenne
 
