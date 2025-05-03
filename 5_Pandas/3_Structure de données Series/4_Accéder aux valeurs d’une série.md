@@ -37,8 +37,15 @@ __Pratiquons__
 Pour récupérer plusieurs valeurs à plusieurs positions, il suffit de donner une liste de ces positions entre crochets. Récupérons les valeurs de poids des athlètes aux positions 0, 15, 6985 et 452.
 
 ```python
-
+import pandas as pd
+ma_serie_de_poids_index_defaut=pd.read_csv("athlete_events.csv", usecols=[5])
+ma_serie_de_poids_index_defaut = ma_serie_de_poids_index_defaut.squeeze()
+ma_serie_de_poids_index_defaut[[0, 15,6985,452]]
 ```
+
+![image](https://github.com/user-attachments/assets/4f12d83d-b368-4393-9599-bccf3c27cbca)
+
+
 
 ## b. Indexing via l’étiquette des valeurs
 
