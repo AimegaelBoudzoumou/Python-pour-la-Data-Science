@@ -62,10 +62,32 @@ Pour sélectionner plusieurs valeurs :
 ma_serie[["ma_valeur1", "ma_valeur2","ma_valeur3"]] 
 ```
 
-Pour l’exemple de cette sous-section, nous allons repartir sur la série que nous avons créée précédemment et sur laquelle nous avons redéfini les index avec les noms des athlètes : ma_serie_de_poids.
-```python
+__Pratiquons__
 
+<!--
+Pour l’exemple de cette sous-section, nous allons repartir sur la série que nous avons créée précédemment et sur laquelle nous avons redéfini les index avec les noms des athlètes : ma_serie_de_poids.
+-->
+
+```python
+import pandas as pd
+ma_serie_de_poids=pd.read_csv("athlete_events.csv", usecols=["Weight", "Name"], index_col=["Name"])
+ma_serie_de_poids = ma_serie_de_poids.squeeze()
+ma_serie_de_poids[["Tomasz Ireneusz ya", "Christine Jacoba Aaftink"]]
 ```
+
+![image](https://github.com/user-attachments/assets/436c13bb-f4f7-4ae6-9a0c-5c449fd580b9)
+
+```python
+import pandas as pd
+ma_serie_de_poids=pd.read_csv("athlete_events.csv", usecols=["Weight", "Name"], index_col=["Name"])
+ma_serie_de_poids = ma_serie_de_poids.squeeze()
+ma_serie_de_poids[["Antti Sami Aalto", "Andrzej ya"]]
+```
+
+![image](https://github.com/user-attachments/assets/4a5a4a9d-3913-497c-af36-f77cf6ca7582)
+
+
+
 
 ## c. Les indexeurs loc et iloc
 
