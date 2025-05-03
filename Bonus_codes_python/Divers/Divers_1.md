@@ -1,7 +1,7 @@
 ```python
 import pandas as pd
 
-df = pd.read_excel("mes_fichiers/Sara_Emtec.xlsx", usecols = 'B,J')
+df = pd.read_excel("mes_fichiers/Emtec.xlsx", usecols = 'B,J')
 df
 
 df[df["Phase"] == "Suspendu"]
