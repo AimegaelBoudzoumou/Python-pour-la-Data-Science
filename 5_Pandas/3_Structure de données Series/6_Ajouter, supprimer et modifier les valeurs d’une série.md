@@ -82,5 +82,9 @@ ma_serie.iloc[position]=nouvelle_valeur
 Modifions les poids des athlètes Antti Sami Aalto et Andrzej ya dans notre série d’exemple.
 
 ```python
-
+ma_serie_de_poids.loc[["Antti Sami Aalto"]]
+ma_serie_de_poids.loc[["Antti Sami Aalto"]] = 56
+ma_serie_de_poids.loc[["Antti Sami Aalto"]]
 ```
+![image](https://github.com/user-attachments/assets/b542b314-6cc1-46dd-81e4-34a6f44a86ad)
+
