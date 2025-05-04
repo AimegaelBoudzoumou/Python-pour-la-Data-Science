@@ -66,3 +66,21 @@ KeyError: "None of [Index(['Claire Muller', 'Julien Villeroy'], dtype='object', 
 
 L'erreur ci-dessus est normal, car les labels "```Claire Muller```" et "```Julien Villeroy```" ont été supprimés de la série.
 
+## c. Modifier les valeurs d’une série
+
+Pour modifier une valeur au sein d’une série, on pourra utiliser les indexeurs ```loc``` et ```iloc``` que nous avons vus précédemment lors de l’indexing (accès aux données). Ici, il s’agit de sélectionner la donnée qui nous intéresse via sa position ou son étiquette, puis d’y assigner une nouvelle valeur avec le symbole d’assignation ```=```.
+
+Syntaxe :
+```python
+ma_serie.loc["nom_index"]=nouvelle_valeur 
+```
+ou
+```python
+ma_serie.iloc[position]=nouvelle_valeur 
+```
+
+Modifions les poids des athlètes Antti Sami Aalto et Andrzej ya dans notre série d’exemple.
+
+```python
+
+```
