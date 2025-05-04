@@ -88,3 +88,18 @@ ma_serie_de_poids.loc[["Antti Sami Aalto"]]
 ```
 ![image](https://github.com/user-attachments/assets/b542b314-6cc1-46dd-81e4-34a6f44a86ad)
 
+Modification du poids de deux athlètes :
+```python
+ma_serie_de_poids.loc[["Antti Sami Aalto","Andrzej ya"]]=[56,70] 
+ma_serie_de_poids.loc[["Antti Sami Aalto","Andrzej ya"]]
+```
+
+![image](https://github.com/user-attachments/assets/b19594c7-7020-4484-983a-c337c0cd4203)
+
+Si un athlète est présent plusieurs fois dans une série, ce qui est le cas dans ce jeu de données puisqu’un athlète a pu participer à plusieurs JO et/ou plusieurs épreuves, son poids sera modifié à chacune de ses occurrences.
+
+C’est le cas de l’athlète Christine Jacoba Aaftink. Regardons ses occurrences dans le jeu de données avant modification de son poids.
+
+![image](https://github.com/user-attachments/assets/10d4016c-7533-4dfe-81c0-e45bf72c7879)
+
+Si, pour une quelconque raison, nous voulions modifier une seule occurrence de cette athlète, alors il faudrait utiliser iloc plutôt que loc et préciser la position à laquelle modifier la valeur. En effet, une position étant unique, une seule valeur serait ainsi modifiée.
