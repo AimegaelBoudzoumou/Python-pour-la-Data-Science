@@ -130,6 +130,39 @@ Ici, on sélectionne la première ligne et les dix premières colonnes du datafr
 
 ## c. Indexing avec une expression booléenne
 
-Pour faire de l’indexing avec une expression booléenne, tout comme pour les séries, il faut utiliser les opérateurs de comparaison (```>```, <, ==, !=, >=, <=) et les opérateurs bitwise&,| et ~.
+Pour faire de l’indexing avec une expression booléenne, tout comme pour les séries, il faut utiliser les opérateurs de comparaison (```>```, ```<```, ```==```, ```!=```, ```>=```, ```<=```) et les opérateurs bitwise ```&```,```|``` et ```~```.
 
+Avec les dataframes, on spécifiera la colonne sur laquelle on souhaite appliquer l’expression booléenne.
 
+__Syntaxe__
+```python
+dataframe[dataframe['colonne1'] >= 10] 
+```
+
+La syntaxe générale d’utilisation des opérateurs _bitwise_ pour comparer plusieurs expressions booléennes est la suivante :
+```python
+dataframe[(dataframe['colonne1'] >= 10) & (dataframe['colonne3'] == 25)]
+```
+
+Enfin, pour obtenir l’inverse de l’expression booléenne demandée, on utilisera l’opérateur bitwise de négation ```~```, avec la syntaxe suivante :
+```python
+dataframe[~(dataframe['colonne1'] >= 10)] 
+```
+
+Exemple pratique
+
+Imaginons qu’on souhaite sélectionner l’ensemble des femmes ayant participé aux JO et ayant gagné une médaille d’or.
+```python
+donnees[(donnees["Sex"] == "F") & (donnees["Medal"] == "Gold")]
+```
+![image](https://github.com/user-attachments/assets/3c8e950b-5131-44f2-809a-81c289d7740c)
+
+Il y a donc 3747 médailles d’or attribuées à des athlètes féminines depuis le début des JO, sachant que ces médailles ont pu être attribuées plusieurs fois à la même athlète.
+
+Pour comparer le nombre de médailles d’or attribuées aux athlètes masculins, on pourrait faire la négation de notre première expression booléenne.
+```python
+donnees[~(donnees["Sex"] == "F") & (donnees["Medal"] == "Gold")]
+```
+![image](https://github.com/user-attachments/assets/306a2bac-7072-48da-84c1-6b510388c01a)
+
+9625 lignes ont été sélectionnées, il y a donc 9625 médailles d’or attribuées aux athlètes masculins depuis le début des JO.
