@@ -130,3 +130,6 @@ Ici, on sélectionne la première ligne et les dix premières colonnes du datafr
 
 ## c. Indexing avec une expression booléenne
 
+Pour faire de l’indexing avec une expression booléenne, tout comme pour les séries, il faut utiliser les opérateurs de comparaison (```>```, <, ==, !=, >=, <=) et les opérateurs bitwise&,| et ~.
+
+
