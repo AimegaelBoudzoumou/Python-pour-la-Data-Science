@@ -92,4 +92,41 @@ Puis on demande de sélectionner les colonnes ```Age```, ```NOC``` et les colonn
 
 ## b. Indexing et slicing avec l’attribut iloc
 
+L’attribut iloc permet de sélectionner des valeurs selon leurs positions dans les lignes et les colonnes.
+
+Si on souhaite sélectionner une valeur à une ligne et une colonne précise, la syntaxe est la suivante :
+```python
+dataframe.iloc[26,7] 
+```
+
+Pour sélectionner des valeurs à plusieurs lignes et colonnes, il faudra donner une liste de noms de lignes et une liste de noms de colonnes :
+```python
+dataframe.iloc[[26,65],[7,12]]
+```
+
+Pour sélectionner une ligne et toutes les colonnes, la syntaxe sera la suivante :
+```python
+dataframe.iloc[26,:]
+```
+
+Pour sélectionner plusieurs lignes et toutes les colonnes, il faut donner une liste de positions de ligne, comme suit :
+```python
+dataframe.iloc[[26,65],:] 
+```
+
+Enfin, pour sélectionner une colonne précise et toutes les lignes, la syntaxe sera la suivante :
+```python
+dataframe.iloc[:,7] 
+```
+
+Comme avec l’attribut loc, il est possible de faire du slicing pour sélectionner des tranches de lignes et de colonnes.
+
+__Syntaxe:__
+```python
+dataframe.iloc[0:1,0:10] 
+```
+
+Ici, on sélectionne la première ligne et les dix premières colonnes du dataframe. Contrairement au slicing avec ```loc```, ici le nombre qu’on donne à l’option ```end``` n’est pas compris dans la sélection (```iloc``` s’arrête à la position 0 pour les lignes, donc sélectionne la première ligne et s’arrête à la position 9 pour les colonnes, donc sélectionne les dix premières colonnes).
+
 ## c. Indexing avec une expression booléenne
+
