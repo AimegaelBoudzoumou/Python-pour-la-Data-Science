@@ -11,7 +11,7 @@ Avant de pouvoir explorer les données contenues dans un tableau, il faut le net
 ## a. Gestion des données manquantes
 Lorsqu’une donnée ne peut pas être répertoriée, lorsque la valeur dans le dataframe est vide, sa valeur devient ```NaN```. Il est important de prendre connaissance de la proportion des valeurs manquantes, voire de les traiter, ce que nous allons voir dans cette section.
 
-### isna()
+### a.1. isna()
 
 La syntaxe générale pour compter le nombre de valeurs manquantes dans un dataframe est la suivante :
 ```python
@@ -29,7 +29,7 @@ Remarque : pour 3.5 % du jeu de données, l’âge n’est pas renseigné.
 
 3.5 = 9474 * 100 / 271166
 
-### dropna() : Suppression des valeurs manquantes
+### a.2. dropna() : Suppression des valeurs manquantes
 
 Il peut arriver que la suppression des lignes contenant des NaN soit utile, si on veut uniquement considérer les données pour lesquelles les valeurs sont présentes.
 
@@ -53,7 +53,7 @@ Syntaxe :
 dataframe.dropna(how="all")
 ```
 
-### notna()
+### a. 3. notna()
 Pour supprimer les lignes avec une valeur manquante dans une colonne spécifique, il faudra utiliser la méthode ```notna()``` plutôt que la méthode ```dropna()```.
 
 Syntaxe
@@ -72,7 +72,7 @@ donnees[donnees['Height'].notna()]
 
 ![image](https://github.com/user-attachments/assets/460c52be-db47-4796-86f5-588c646b33b5)
 
-### fillna() : Remplacement des valeurs manquantes
+### a. 4. fillna() : Remplacement des valeurs manquantes
 
 Il peut arriver que nous n’ayons pas envie de supprimer les lignes contenant des valeurs manquantes, sous peine de perdre de l’information, mais qu’on souhaite toutefois ne plus avoir de valeurs manquantes dans le tableau. Il est alors possible d’utiliser une méthode appelée ```fillna()```, qui va remplacer les valeurs ```NaN``` par ce qu’on lui demande.
 
