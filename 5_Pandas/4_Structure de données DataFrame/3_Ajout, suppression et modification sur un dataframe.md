@@ -216,3 +216,73 @@ donnees.tail()
 
 
 ## d. Modifier des valeurs dans un dataframe
+
+Comme pour les séries, on peut utiliser les attributs ```loc``` (en donnant les étiquettes) et ```iloc``` (en donnant les positions) ainsi que le symbole d’assignation ```=``` pour modifier les données.
+
+Pour modifier une valeur avec l’attribut ```loc``` ou ```iloc```, la syntaxe est la suivante :
+
+```python
+dataframe.loc["étiquette de ligne", "nom de colonne"] = valeur 
+dataframe.iloc[position_ligne, position_colonne] = valeur
+```
+
+Il est aussi possible de modifier les valeurs en donnant une expression booléenne entre crochets à l’attribut ```loc```.
+
+Syntaxe :
+```python
+dataframe.loc[dataframe["ma_colonne"] > 1000, ["ma_colonne"]] = 1000 
+```
+
+Dans cette syntaxe d’exemple, on récupère l’ensemble des lignes pour lesquelles la valeur de ```ma_colonne``` est supérieure à 1000, puis on sélectionne ```ma_colonne``` et on remplace donc les valeurs strictement supérieures à 1000 dans ```ma_colonne``` par 1000.
+
+__replace()__
+Enfin, une méthode Pandas est dédiée au remplacement de valeurs. Cette méthode s’appelle ```replace()``` et elle est vraiment puissante, notamment lorsqu’on veut remplacer un ensemble de mêmes valeurs par une autre.
+
+Syntaxe:
+```python
+dataframe.replace(to_replace="mon_mot", value="mon_mot_2") 
+```
+
+__Exemple pratique 1__
+
+Modifier l’âge de l’athlète A Dijiang en lui donnant vingt-cinq ans.
+```python
+donnees_modif=donnees.copy()
+donnees_modif.loc["A Dijiang", "Age"] = 25
+donnees_modif.loc[["A Dijiang"]]
+```
+
+__Exemple pratique 2__
+
+Remplaçons toutes les tailles comprises entre 170 cm et 180 cm par 175 cm.
+
+```python
+donnees_modif=donnees.copy()
+
+# Ici, on demande de sélectionner les lignes dont la valeur de la colonne Height (taille)
+# est supérieure ou égale à 170 et inférieure ou égale à 180
+# et d’y remplacer cette valeur par 175.
+
+
+donnees_modif.loc[(donnees_modif["Height"] >= 170) & 
+                  (donnees_modif["Height"] <= 180), "Height"] = 175
+
+donnees_modif.head()
+```
+![image](https://github.com/user-attachments/assets/3a548748-26c6-4ebe-92b1-5f9f41269153)
+
+
+__Exemple pratique 3__
+
+Remplacer le mot "China" par "Chine" dans l’ensemble du tableau.
+
+```python
+# rappel de la yntaxe : dataframe.replace(to_replace="mon_mot", value="mon_mot_2") 
+
+donnees_modif = donnees.copy()
+
+donnees_modif.replace(to_replace="China", value="Chine", inplace=True)
+
+donnees_modif.head()
+```
+![image](https://github.com/user-attachments/assets/b5d0d46e-785c-45e7-94fb-46f80e393d8a)
