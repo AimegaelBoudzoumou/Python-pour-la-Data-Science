@@ -175,4 +175,5 @@ __Exemple pratique__
 
 Supprimons les lignes dupliquées du jeu de données des JO.
 
-![image](https://github.com/user-attachments/assets/1c999951-84f9-460b-b2d2-1b413a9223b8)
+![image](https://github.com/user-attachments/assets/1f7f5e87-5136-4426-b03e-ad64a7bb80fa)
+
