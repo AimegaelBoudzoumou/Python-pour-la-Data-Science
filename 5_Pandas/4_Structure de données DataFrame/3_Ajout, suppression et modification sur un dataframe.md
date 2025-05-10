@@ -73,7 +73,140 @@ donnees_test
 
 ## b. Ajouter une ligne à un dataframe
 
+__Note importante__
+Le livre présente l'utilisation de ```append```. 
+
+L'utilisation de ```append``` provoque cette erreur :
+```python
+AttributeError: 'DataFrame' object has no attribute 'append'
+```
+
+Je recommande d'utiliser ```loc```.
+
+```python
+import pandas as pd
+
+donnees.loc["Claire Muller"] = pd.Series(['135572', 'F', 29, 
+175, 58, 'China', 'CHN', '2012 Summer', 2012, 'Summer', 'London', 
+'Judo', "Judo Women's Extra-Lightweight",'NaN' ], index=donnees.columns)
+
+donnees.tail()
+```
+![image](https://github.com/user-attachments/assets/882a89bf-fb24-4a6d-a626-2faff5ecfb1d)
+
+<!--
+Pour ajouter une ou plusieurs lignes, on utilise la méthode append() que nous avons déjà rencontrée sur les objets de classe Series.
+
+__Syntaxe d’ajout d’une ligne__
+```python
+import pandas as pd 
+dataframe_nouveau=dataframe.append(pd.Series([valeur1, valeur2, ...], 
+index=dataframe.columns),ignore_index=True)
+```
+
+__Note__
+Si les index de votre dataframe correspondent à des nombres incrémentés et que vous souhaitez rester là-dessus, définissez une série sans nom au sein de la méthode ```append()``` et utilisez l’option ```ignore_index=True```. En revanche, si vous donnez un nom à la série créée dans ```append()```, grâce à l’option ```Name``` que nous avons vue ensemble dans la section sur les séries, et que vous souhaitez que ce nom précisément apparaisse comme étiquette de la nouvelle ligne ajoutée, alors laissez l’option ```ignore_index=False```.
+
+Pour ajouter plusieurs lignes, il suffit de donner une liste de séries à la méthode ```append()```.
+
+Syntaxe :
+
+```python
+dataframe_nouveau=dataframe.append([pd.Series([valeur1, valeur2, ...], 
+index=dataframe.columns), pd.Series([valeur1_2, valeur2_2, ...], 
+index=index_colonnes), pd.Series([valeur1_3, valeur2_3, ...],  
+index=index_colonnes) ], ignore_index=True)
+```
+
+Il est possible de donner un nom aux séries, à utiliser comme index des nouvelles lignes.
+
+Syntaxe
+```python
+dataframe_nouveau=dataframe.append([pd.Series([valeur1, valeur2, ...], 
+index=dataframe.columns, name="index_de_ligne_1"),  
+pd.Series([valeur1_2, valeur2_2, ...], index=index_colonnes,  
+name="index_de_ligne_2"), pd.Series([valeur1_3, valeur2_3, ...],  
+index=index_colonnes, name="index_de_ligne_3") ])
+```
+
+__Note__
+
+Comme expliqué lors de la première utilisation de la méthode append(), celle-ci n’effectue pas la modification directement sur le dataframe mais crée une copie de ce dataframe, pour ne pas toucher à l’intégrité des données du dataframe original. Ainsi, il faut ranger le nouveau dataframe que retourne la méthode append() dans une nouvelle variable.
+
+__Exemple pratique 1__
+Code pour ajouter une ligne, avec l’option ignore_index=True
+
+__Exemple pratique 2__
+Code pour ajouter une ligne, avec l’option ignore_index=True
+-->
 
 ## c. Supprimer des lignes ou colonnes d’un dataframe
+
+Pour la suppression d’éléments dans un dataframe, que ce soit des lignes ou des colonnes, il faut utiliser la méthode ```drop()```. Pour les colonnes, il faut utiliser le ou les noms de colonnes à supprimer en spécifier l’axe d’intérêt, ici l’axe des colonnes, donc 1.
+
+Syntaxe de suppression de colonnes avec la méthode drop()
+```python
+dataframe_nouveau=dataframe.drop(["ma_colonne_1","ma_colonne_2", 
+"ma_colonne_3"], axis=1)
+```
+
+Pour supprimer des lignes, on utilisera soit leur position, soit leur étiquette d’index.
+
+__soit leur étiquette d’index__
+Pour supprimer des lignes via leur étiquette, on donnera ces étiquettes sous forme de liste en spécifiant l’axe des lignes, ici 0.
+
+__Syntaxe__
+```python
+dataframe_nouveau=dataframe.drop(["ma_ligne_1","ma_ligne_2", 
+"ma_ligne_3"], axis=0) 
+```
+
+__soit leur position__
+Pour supprimer des lignes via leurs positions, on utilisera la méthode ```index()``` au sein de la méthode ```drop()```, avec la syntaxe suivante :
+```python
+dataframe_nouveau=dataframe.drop(dataframe.index[[2,3]], axis=0) 
+```
+
+La méthode ```index()``` permet de récupérer les étiquettes des index en donnant leur position. Ainsi, dans cet exemple, on récupère les étiquettes des lignes aux positions 2 et 3, qu’on donne ensuite à la méthode ```drop()``` pour qu’elle puisse les supprimer.
+
+__inplace dans drop()__
+La méthode drop() retourne une copie du dataframe avec les éléments supprimés, afin de ne pas modifier le dataframe original. Toutefois, il est possible d’utiliser l’option inplace=True pour effectuer la suppression directement sur le dataframe original.
+
+Syntaxe :
+```python
+dataframe.drop(["ma_colonne_1","ma_colonne_2","ma_colonne_3"],  
+axis=1, inplace=True) 
+```
+
+__Exemple pratique 1__
+Supprimons les colonnes nommées ```Test``` et ```Poids_athlètes``` précédemment ajoutées sur le dataframe nommé ```donnees_test```.
+
+```python
+donnees_test.drop(["Test", "Poids_athlètes"], axis=1, inplace=True)
+
+donnees_test.head()
+```
+
+![image](https://github.com/user-attachments/assets/40ce7b73-219e-4f49-9ceb-4d6a71da0583)
+
+__Exemple pratique 2__
+Comme deuxième exemple, supprimons la dernière ligne ajoutée à notre jeu de données sur les JO, dont le dataframe ```donnees```. L’étiquette de cette ligne est "Claire Muller" et on peut l’utiliser pour supprimer la ligne.
+__Avant suppression :__
+```python
+donnees.tail()
+```
+![image](https://github.com/user-attachments/assets/b4b00f7f-af5e-4be5-a7e4-5ecccc8585fa)
+
+__Suppression "Claire Muller"__
+```python
+donnees.drop(["Claire Muller"], axis=0, inplace=True)
+```
+
+__Après suppression :__
+```python
+donnees.tail()
+```
+![image](https://github.com/user-attachments/assets/7d11bb1e-6d43-40b8-84cc-5309db36566b)
+
 
 ## d. Modifier des valeurs dans un dataframe
