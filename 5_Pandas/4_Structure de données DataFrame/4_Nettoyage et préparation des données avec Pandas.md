@@ -110,3 +110,69 @@ donnees[['Age','Height','Weight']].mean()
 Il s’agit d’une série contenant pour chaque variable la moyenne des valeurs de cette variable.
 
 ## b. Gestion des données dupliquées
+
+Lorsqu’on commence à travailler avec un tableau contenant beaucoup de données, il ne faut pas seulement prendre en compte la gestion des valeurs manquantes, mais aussi celle des informations dupliquées. En effet, cela peut fausser les conclusions que l’on fait sur un jeu de données si certaines informations sont dupliquées de nombreuses fois.
+
+Des informations dupliquées peuvent être des lignes entières dupliquées, c’est-à-dire que, pour une raison inconnue, une ligne a été entrée dans le tableau deux fois, voire plus. C’est ce genre d’erreur qui peut poser problème, il faut donc faire attention et les traiter.
+
+### b.1. Détection/récupération des lignes dupliquées
+
+La syntaxe générale pour détecter les lignes entièrement dupliquées dans un tableau est la suivante :
+```python
+dataframe[dataframe.duplicated()] 
+```
+
+Ici, on utilise la méthode ```duplicated()``` qui retournera une série contenant des booléens permettant de dire si la ligne est dupliquée (```True```) ou non (```False```). Ainsi, la syntaxe présentée retournera l’ensemble des lignes dupliquées, sauf la première occurrence. En effet, la méthode ```duplicated()``` possède deux options intéressantes, dont voici la syntaxe :
+```python
+dataframe[dataframe.duplicated(subset=["ma_colonne1",ma_colonne2"], 
+keep='first')]
+```
+
+### b.2. Détecter la duplication sur un sous-ensemble de colonnes
+Par défaut, la méthode ```duplicated()```, traite les lignes entières, c’est-à-dire l’ensemble des colonnes. Si on souhaite uniquement détecter la duplication sur un sous-ensemble de colonnes, il est possible de donner les noms de colonnes à l’option ```subset```.
+
+De même, par défaut, la méthode ```duplicated()``` garde la première occurrence de lignes dupliquées et supprime les autres, grâce à l’option ```keep=’first’```. Ainsi, quand on utilise la syntaxe présentée ci-dessus, celle-ci retourne un dataframe contenant l’ensemble des lignes dupliquées (dont la valeur est ```True``` après ```duplicated()```), sauf la première occurrence, que ```duplicated()``` laisse à ```False``` pour ne pas perdre l’information.
+
+En effet, la suppression de données dupliquées nécessite tout de même de garder une occurrence des données dupliquées. Il est aussi possible de garder uniquement la dernière occurrence des lignes dupliquées avec l’option ```keep=’last’```. Dans ce cas, c’est la dernière occurrence que la méthode ```duplicated()``` laisserait à ```False``` et les autres à ```True```.
+
+__Exemple pratique__
+
+Récupérons les lignes dupliquées dans le tableau donnees.
+```python
+donnees[donnees.duplicated()]
+```
+![image](https://github.com/user-attachments/assets/4679d022-a8e2-4ae9-bce3-1b4da8f5b829)
+
+Ici, l’ensemble des lignes dupliquées avec toutes leurs occurrences, sauf la première, sont retournées. Avec ce résultat, on peut conclure que la ligne avec l’ID ```704``` est présente deux fois dans le tableau, puisque la méthode ```duplicated()``` l’affiche une fois, sans la première occurrence. La ligne avec l’ID ```2449``` est présente trois fois dans le tableau, avec exactement les mêmes valeurs dans l’ensemble des colonnes. La présence de ces lignes dupliquées fausse clairement les résultats, car si on s’intéresse par exemple à la discipline "Art Competitions" et que l’on compte le nombre d’athlètes dans cette discipline, le résultat sera supérieur à la réalité puisqu’il y a des lignes dupliquées. C’est pour cela qu’il est important de nettoyer son jeu de données avant de commencer à l’analyser, pour ne pas faire de fausses conclusions.
+
+### Attention
+Ici ce sont vraiment des lignes dupliquées entièrement, donc de l’information dupliquée. Dans ce tableau, on sait que les athlètes peuvent être présents plusieurs fois, car ils ont pu participer à plusieurs JO et/ou plusieurs épreuves, mais pour ces cas précis, l’ensemble de la ligne n’est pas dupliqué, les variables ```Year``` ou ```Event```, au minimum, changent. Donc on ne les récupère pas ici. Le but est réellement de détecter les lignes apportant exactement la même information plusieurs fois.
+
+### b. 4. Compter le nombre de lignes dupliquées dans le tableau
+Pour compter le nombre de lignes dupliquées dans le tableau, il suffit d’utiliser l’attribut ```shape``` sur notre code précédent. L’attribut ```shape``` est une variable retournant un tuple contenant la dimension d’un dataframe : (```nombre de lignes```, ```nombre de colonnes```).
+```python
+donnees[donnees.duplicated()].shape
+```
+![image](https://github.com/user-attachments/assets/3818a5ca-88d7-4e8c-a1c7-ffb3d4f1dd31)
+
+Il y a en tout 1 385 lignes dupliquées dans le tableau, sans compter leur première occurrence, et qu’il faudrait supprimer.
+
+### b. 5. Suppression des lignes dupliquées
+Pour nettoyer le dataframe, on va vouloir supprimer l’ensemble des lignes dupliquées, en gardant toujours une occurrence de celles-ci.
+
+La syntaxe générale pour faire cette étape de nettoyage est la suivante :
+```python
+dataframe.drop_duplicates(inplace=True) 
+```
+
+La méthode ```drop_duplicates()``` va supprimer les lignes dupliquées en prenant en compte l’ensemble des colonnes et en gardant la première occurrence de chaque ligne dupliquée dans le dataframe qu’elle retourne.
+
+Cette méthode possède les deux mêmes options que la méthode ```duplicated() : keep``` pour garder la première ou la dernière occurrence et ```subset``` pour préciser quelles colonnes prendre en compte pour déterminer les lignes dupliquées, la méthode prenant par défaut l’ensemble des colonnes.
+
+En ne précisant pas l’option ```inplace```, la méthode ```drop_duplicates()``` retourne une copie du dataframe d’origine, sans lignes dupliquées. En précisant l’option ```inplace=True```, la méthode ```drop_duplicates()``` supprime les lignes dupliquées directement sur le dataframe d’origine.
+
+__Exemple pratique__
+
+Supprimons les lignes dupliquées du jeu de données des JO.
+
+![image](https://github.com/user-attachments/assets/1c999951-84f9-460b-b2d2-1b413a9223b8)
