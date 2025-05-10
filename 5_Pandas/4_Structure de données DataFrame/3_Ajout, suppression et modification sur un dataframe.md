@@ -40,6 +40,7 @@ dataframe.insert(0, 'Nom_de_colonne', ma_serie)
 ```
 
 __Exemple pratique__
+
 Créons une copie de notre objet ```donnees``` appelée ```donnees_test```, auquel nous ajouterons une colonne nommée ```Test``` contenant la valeur ```0```, dans le dataframe des Jeux olympiques, à la fin du tableau :
 
 ```pyton
@@ -134,9 +135,11 @@ __Note__
 Comme expliqué lors de la première utilisation de la méthode append(), celle-ci n’effectue pas la modification directement sur le dataframe mais crée une copie de ce dataframe, pour ne pas toucher à l’intégrité des données du dataframe original. Ainsi, il faut ranger le nouveau dataframe que retourne la méthode append() dans une nouvelle variable.
 
 __Exemple pratique 1__
+
 Code pour ajouter une ligne, avec l’option ignore_index=True
 
 __Exemple pratique 2__
+
 Code pour ajouter une ligne, avec l’option ignore_index=True
 -->
 
@@ -179,6 +182,7 @@ axis=1, inplace=True)
 ```
 
 __Exemple pratique 1__
+
 Supprimons les colonnes nommées ```Test``` et ```Poids_athlètes``` précédemment ajoutées sur le dataframe nommé ```donnees_test```.
 
 ```python
@@ -190,7 +194,9 @@ donnees_test.head()
 ![image](https://github.com/user-attachments/assets/40ce7b73-219e-4f49-9ceb-4d6a71da0583)
 
 __Exemple pratique 2__
+
 Comme deuxième exemple, supprimons la dernière ligne ajoutée à notre jeu de données sur les JO, dont le dataframe ```donnees```. L’étiquette de cette ligne est "Claire Muller" et on peut l’utiliser pour supprimer la ligne.
+
 __Avant suppression :__
 ```python
 donnees.tail()
