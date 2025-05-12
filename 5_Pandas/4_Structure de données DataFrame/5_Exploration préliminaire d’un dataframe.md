@@ -43,7 +43,7 @@ Rappel : pour connaître le type d’un objet, il faut utiliser la fonction type
 type(donnees.values) # numpy.ndarray
 ```
 
-### a. 3. shape 
+### a. 4. shape 
 
 L’attribut shape donne des informations sur la dimension du dataframe. La sortie est un tuple contenant le nombre de lignes à gauche de la virgule et le nombre de colonnes à droite de la virgule.
 
@@ -52,7 +52,7 @@ __Note :__
 
 L’ensemble des attributs et méthodes liés aux dataframes sont disponibles dans la documentation officielle : https://pandas.pydata.org/pandas-docs/version/0.21.1/generated/pandas.DataFrame.html
 
-### a. 4. dtypes
+### a. 5. dtypes
 
 Retourne le type des données contenues dans chaque colonne du dataframe.
 
